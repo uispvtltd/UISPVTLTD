@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogs | United Integrated Services Pvt Ltd</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Header with Hamburger -->
+<header class="navbar" id="navbar">
+  <a href="index.html" class="logo">
+    <img src="static/images/logo.jpeg" alt="Company Logo" style="height:50px;">
+  </a>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="login.html" class="login-btn">Login</a>
+  </div>
+</header>
+
+
+  <!-- Blogs Section -->
+  <section class="blogs-section">
+    <h2>Latest Blogs & Insights</h2>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <img src="static/blog1.jpg" alt="Blog 1">
+        <h3>Revolutionizing Agriculture with IoT</h3>
+        <p>Explore how sensor networks and cloud-connected devices are transforming farming for better productivity.</p>
+        <a href="#">Read More →</a>
+      </div>
+      <div class="blog-card">
+        <img src="static/blog2.jpg" alt="Blog 2">
+        <h3>AI in Everyday Devices</h3>
+        <p>From smart assistants to automation—how artificial intelligence is embedded in daily life and industries.</p>
+        <a href="#">Read More →</a>
+      </div>
+      <div class="blog-card">
+        <img src="static/blog3.jpg" alt="Blog 3">
+        <h3>Embedded Systems in Smart Cities</h3>
+        <p>Discover the vital role of embedded systems in urban planning, energy, transport, and smart infrastructure.</p>
+        <a href="#">Read More →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD</p>
+    <div class="socials">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-linkedin"></i>
+    </div>
+  </footer>
+
+  <!-- Hamburger Toggle Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('navbar').classList.toggle('expanded');
+    }
+  </script>
+
+</body>
+</html>

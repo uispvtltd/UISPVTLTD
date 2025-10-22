@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – United Integrated Services Pvt Ltd</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Header with Hamburger -->
+  <header class="navbar" id="navbar">
+  <a href="index.html" class="logo">
+    <img src="static/images/logo.jpeg" alt="Company Logo" style="height:50px;">
+  </a>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="login.html" class="login-btn">Login</a>
+  </div>
+</header>
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Reach out for inquiries, partnerships, or support.</p>
+
+    <div class="contact-container">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> unitedintegratedservicespvtltd@gmail.com</p>
+        <p><i class="fas fa-phone"></i> +91 89782 95589</p>
+        <p><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana, India</p>
+      </div>
+
+      <!-- Contact Form -->
+      <form class="contact-form" action="#" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD</p>
+    <div class="socials">
+      <i class="fab fa-linkedin"></i>
+      <i class="fab fa-instagram"></i>
+    </div>
+  </footer>
+
+  <!-- Hamburger Toggle Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('navbar').classList.toggle('expanded');
+    }
+  </script>
+
+</body>
+</html>

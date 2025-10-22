@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – United Integrated Services Pvt Ltd</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Header with Hamburger -->
+<header class="navbar" id="navbar">
+  <a href="index.html" class="logo">
+    <img src="static/images/logo.jpeg" alt="Company Logo" style="height:50px;">
+  </a>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="login.html" class="login-btn">Login</a>
+  </div>
+</header>
+
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h1>About Us</h1>
+    <p>
+      <strong>United Integrated Services Pvt Ltd</strong> is a future-forward innovation company providing smart, scalable, and secure solutions in 
+      <strong>AI, IoT, Embedded Systems, VLSI, Robotics, Machine Learning, Full Stack Web Development, and UI/UX Design</strong>. 
+      We empower industries through intelligent automation and next-generation technology.
+    </p>
+
+    <div class="about-grid">
+      <div>
+        <h3>🔭 Vision</h3>
+        <p>To transform industries with innovative, intelligent, and sustainable technology solutions.</p>
+      </div>
+      <div>
+        <h3>🎯 Mission</h3>
+        <p>To lead the future of automation and smart integration with AI- and IoT-powered systems that enhance efficiency and real-world impact.</p>
+      </div>
+      <div>
+        <h3>🧠 Our Team</h3>
+        <p>A dynamic group of engineers, developers, and creators committed to solving real-world problems through next-gen technology and creative engineering.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD</p>
+    <div class="socials">
+      <i class="fab fa-linkedin"></i>
+      <i class="fab fa-instagram"></i>
+    </div>
+  </footer>
+
+  <!-- Hamburger Toggle Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('navbar').classList.toggle('expanded');
+    }
+  </script>
+
+</body>
+</html>

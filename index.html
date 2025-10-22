@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>United Integrated Services Pvt Ltd</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+
+ <!-- Header -->
+<header class="navbar" id="navbar">
+  <a href="index.html" class="logo">
+    <img src="static/images/logo.jpeg" alt="Company Logo" style="height:50px;">
+  </a>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="login.html" class="login-btn">Login</a>
+  </div>
+</header>
+
+
+  <!-- Hero Section -->
+  <section class="video-hero">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="static/videos/tech-background.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1>Welcome to United Integrated Services Pvt Ltd</h1>
+      <p>Empowering Innovation in Smart Systems & AI</p>
+      <div class="hero-buttons">
+        <a href="products.html"><button>Explore Products</button></a>
+        <a href="contact.html"><button class="outline">Contact Us</button></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients -->
+  <section class="clients">
+    <h2>Our Partners</h2>
+    <div class="client-logos">
+      <img src="static/images/vardhan-projects.jpg" alt="Vardhan's Projects" /> <!-- New Partner -->
+    </div>
+  </section>
+
+  <!-- Technologies -->
+  <section class="technologies">
+    <h2>Technologies We Work On</h2>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <img src="static/images/iot.jpg" alt="IoT">
+        <span>IoT</span>
+      </div>
+      <div class="tech-item">
+        <img src="static/images/vlsi.jpg" alt="VLSI">
+        <span>VLSI</span>
+      </div>
+      <div class="tech-item">
+        <img src="static/images/embedded.jpg" alt="Embedded Systems">
+        <span>Embedded Systems</span>
+      </div>
+      <div class="tech-item">
+        <img src="static/images/ml.jpg" alt="Machine Learning">
+        <span>Machine Learning</span>
+      </div>
+      <div class="tech-item">
+        <img src="static/images/ai.jpg" alt="Artificial Intelligence">
+        <span>Artificial Intelligence</span>
+      </div>
+      <div class="tech-item">
+        <img src="static/images/robotics.jpg" alt="Robotics">
+        <span>Robotics</span>
+      </div>
+      <div class="tech-item">
+        <img src="static/images/web.jpg" alt="Full Stack Web Development">
+        <span>Full Stack Web Dev</span>
+      </div>
+      <div class="tech-item">
+        <img src="static/images/uiux.jpg" alt="UI/UX Design">
+        <span>UI/UX Design</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD</p>
+    <div class="socials">
+      <img src="static/images/linkedin.jpg" alt="LinkedIn" width="24">
+      <img src="static/images/instagram.jpg" alt="Instagram" width="24">
+    </div>
+  </footer>
+
+  <!-- Hamburger Toggle -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('navbar').classList.toggle('expanded');
+    }
+  </script>
+
+</body>
+</html>
