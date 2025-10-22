@@ -6,64 +6,84 @@
   <title>Blogs | United Integrated Services Pvt Ltd</title>
   <link rel="stylesheet" href="static/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; line-height:1.6; }
+    .navbar { display:flex; align-items:center; justify-content:space-between; padding:10px 20px; background:#0a1f44; color:#fff; position:sticky; top:0; z-index:1000; }
+    .nav-links a { margin-left:15px; color:#fff; text-decoration:none; }
+    .nav-links a.active { border-bottom:2px solid #ffcc00; padding-bottom:2px; }
+    .hamburger { display:none; cursor:pointer; font-size:24px; }
+    .blog-section { padding:60px 20px; max-width:900px; margin:0 auto; }
+    .blog-section h1, .blog-section h2 { text-align:center; color:#0a1f44; margin-bottom:30px; }
+    .blog-article img { width:100%; max-height:400px; object-fit:cover; border-radius:10px; margin-bottom:20px; }
+    .blog-article h2 { color:#0a1f44; margin-bottom:15px; font-size:2em; }
+    .blog-article p { margin-bottom:15px; font-size:1.1em; color:#333; }
+    .blog-author { margin-top:20px; font-weight:bold; color:#0a1f44; }
+    footer { background:#0a1f44; color:#fff; padding:20px; text-align:center; }
+    .footer-logos img { margin:0 10px; vertical-align:middle; }
+    @media(max-width:768px){ .hamburger { display:block; } .nav-links { display:none; flex-direction:column; } .nav-links.expanded { display:flex; } }
+  </style>
 </head>
 <body>
 
-  <!-- Header with Hamburger -->
-<header class="navbar" id="navbar">
-  <a href="index.html" class="logo">
-    <img src="static/images/logo.jpeg" alt="Company Logo" style="height:50px;">
-  </a>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="products.html">Products</a>
-    <a href="contact.html">Contact</a>
-    <a href="blogs.html">Blogs</a>
-    <a href="login.html" class="login-btn">Login</a>
-  </div>
-</header>
+  <!-- Header -->
+  <header class="navbar" id="navbar">
+    <a href="index.html" class="logo">
+      <img src="static/images/logo.jpeg" alt="Company Logo" style="height:50px;">
+    </a>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="blogs.html" class="active">Blogs</a>
+      <a href="login.html" class="login-btn">Login</a>
+    </nav>
+  </header>
 
+  <!-- Blog Section -->
+  <section class="blog-section">
+    <h1>Latest Blog</h1>
 
-  <!-- Blogs Section -->
-  <section class="blogs-section">
-    <h2>Latest Blogs & Insights</h2>
-    <div class="blog-grid">
-      <div class="blog-card">
-        <img src="static/blog1.jpg" alt="Blog 1">
-        <h3>Revolutionizing Agriculture with IoT</h3>
-        <p>Explore how sensor networks and cloud-connected devices are transforming farming for better productivity.</p>
-        <a href="#">Read More →</a>
-      </div>
-      <div class="blog-card">
-        <img src="static/blog2.jpg" alt="Blog 2">
-        <h3>AI in Everyday Devices</h3>
-        <p>From smart assistants to automation—how artificial intelligence is embedded in daily life and industries.</p>
-        <a href="#">Read More →</a>
-      </div>
-      <div class="blog-card">
-        <img src="static/blog3.jpg" alt="Blog 3">
-        <h3>Embedded Systems in Smart Cities</h3>
-        <p>Discover the vital role of embedded systems in urban planning, energy, transport, and smart infrastructure.</p>
-        <a href="#">Read More →</a>
-      </div>
-    </div>
+    <article class="blog-article">
+      <img src="static/images/iot-innovation.jpg" alt="Innovations in IoT">
+      <h2>Innovations in Internet of Things (IoT)</h2>
+      <p>The Internet of Things (IoT) has emerged as a transformative technology, reshaping industries and redefining how humans interact with the digital world. Initially referred to as the Embedded Internet, the concept was formalized in 1999 by Kevin Ashton, who envisioned a future where interconnected devices could communicate and share information autonomously. Since then, IoT has grown into a powerful network of physical objects embedded with sensors, software, and connectivity that enable real-time data exchange and intelligent decision-making.</p>
+
+      <p>At the core of IoT lies the integration of embedded systems—compact, specialized hardware designed to perform dedicated functions. These systems typically include microcontrollers, sensors, and communication interfaces that enable the collection and transmission of data. Sensors play a crucial role in this ecosystem by detecting changes in the environment, such as temperature, pressure, motion, or biometrics. These components allow IoT devices to function autonomously, sensing conditions, processing data, and communicating insights to users or cloud platforms.</p>
+
+      <p>One of the most prominent applications of IoT can be seen in wearable technology, such as fitness trackers and smartwatches. Devices like Fitbit utilize advanced sensors to monitor health parameters and physical activity. For instance, the Heart Rate Monitor (HRM) sensor continuously tracks a user's heartbeat using optical techniques, helping users keep track of their cardiovascular health. Similarly, the accelerometer sensor detects movement and acceleration, calculating the number of steps taken, distance traveled, and calories burned throughout the day. These sensors are vital in personal fitness and preventive healthcare, offering users real-time feedback on their physical well-being.</p>
+
+      <p>Beyond personal health, IoT is also revolutionizing the healthcare industry at large. IoT-based medical devices can now monitor patients remotely, record vital signs like blood pressure and heart rate, and instantly alert nearby hospitals or family members in case of emergencies. This not only enhances the efficiency of medical response systems but also reduces the burden on healthcare facilities by enabling proactive care for chronic illnesses and elderly patients.</p>
+
+      <p>The reach of IoT extends into aerospace and aviation as well, where real-time monitoring and intelligent tracking are essential for safety and operational efficiency. Modern aircraft now incorporate IoT-enabled technologies like RFID (Radio Frequency Identification), BBT (Bluetooth-Based Tracking), and GPS (Global Positioning System) tools. RFID devices are used to track components and cargo through electromagnetic fields, enabling seamless identification and verification processes. BBT devices facilitate proximity tracking of equipment and goods within the aircraft, while GPS systems are crucial for navigation, asset tracking, and fleet management, both on the ground and in the sky.</p>
+
+      <p>As IoT devices become increasingly eco-friendly, efficient, and intelligent, their integration into everyday life continues to expand. From smart homes and connected vehicles to industrial automation and smart cities, IoT is creating a data-driven ecosystem that enhances quality of life, promotes sustainability, and improves decision-making. These innovations not only increase convenience and productivity but also pave the way for AI-driven automation, real-time analytics, and predictive maintenance across sectors.</p>
+
+      <p>In conclusion, the Internet of Things is not just a technological trend—it is a foundational shift in how the world connects and communicates. As IoT continues to evolve, the fusion of hardware, software, and data intelligence will unlock new opportunities across healthcare, transportation, energy, and beyond. The next decade promises a more connected, intelligent, and efficient world—powered by IoT.</p>
+
+      <p class="blog-author">— Written by BANGARI POOJITHA</p>
+    </article>
   </section>
 
   <!-- Footer -->
   <footer>
     <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD</p>
-    <div class="socials">
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-linkedin"></i>
+    <div class="footer-logos">
+      <img src="static/images/ofit.jpg" alt="OFIT" style="height:40px; margin-right:10px;">
+      <a href="https://www.linkedin.com/company/united-integrated-services-pvt-ltd/" target="_blank">
+        <img src="static/images/linkedin.jpg" alt="LinkedIn" width="24">
+      </a>
+      <a href="https://www.instagram.com/uispvtltd/reels/" target="_blank">
+        <img src="static/images/instagram.jpg" alt="Instagram" width="24">
+      </a>
     </div>
   </footer>
 
   <!-- Hamburger Toggle Script -->
   <script>
     function toggleMenu() {
-      document.getElementById('navbar').classList.toggle('expanded');
+      document.querySelector('.nav-links').classList.toggle('expanded');
     }
   </script>
 
