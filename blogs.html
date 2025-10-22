@@ -12,12 +12,16 @@
     .nav-links a { margin-left:15px; color:#fff; text-decoration:none; }
     .nav-links a.active { border-bottom:2px solid #ffcc00; padding-bottom:2px; }
     .hamburger { display:none; cursor:pointer; font-size:24px; }
-    .blog-section { padding:60px 20px; max-width:900px; margin:0 auto; }
-    .blog-section h1, .blog-section h2 { text-align:center; color:#0a1f44; margin-bottom:30px; }
-    .blog-article img { width:100%; max-height:400px; object-fit:cover; border-radius:10px; margin-bottom:20px; }
-    .blog-article h2 { color:#0a1f44; margin-bottom:15px; font-size:2em; }
-    .blog-article p { margin-bottom:15px; font-size:1.1em; color:#333; }
-    .blog-author { margin-top:20px; font-weight:bold; color:#0a1f44; }
+    .blogs-section { padding:60px 20px; max-width:1100px; margin:0 auto; }
+    .blogs-section h1 { text-align:center; color:#0a1f44; margin-bottom:40px; }
+    .blog-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:30px; }
+    .blog-card { border:1px solid #ddd; border-radius:10px; overflow:hidden; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,0.1); display:flex; flex-direction:column; }
+    .blog-card img { width:100%; height:200px; object-fit:cover; }
+    .blog-card-content { padding:15px; flex:1; display:flex; flex-direction:column; }
+    .blog-card-content h3 { color:#0a1f44; margin-bottom:10px; font-size:1.3em; }
+    .blog-card-content p { flex:1; color:#555; margin-bottom:15px; font-size:1em; }
+    .blog-card-content a { text-decoration:none; background:#0a1f44; color:#fff; padding:8px 15px; border-radius:5px; text-align:center; transition:0.3s; display:inline-block; }
+    .blog-card-content a:hover { background:#ffcc00; color:#0a1f44; }
     footer { background:#0a1f44; color:#fff; padding:20px; text-align:center; }
     .footer-logos img { margin:0 10px; vertical-align:middle; }
     @media(max-width:768px){ .hamburger { display:block; } .nav-links { display:none; flex-direction:column; } .nav-links.expanded { display:flex; } }
@@ -41,29 +45,112 @@
     </nav>
   </header>
 
-  <!-- Blog Section -->
-  <section class="blog-section">
-    <h1>Latest Blog</h1>
+  <!-- Blogs Section -->
+  <section class="blogs-section">
+    <h1>Our Blogs & Insights</h1>
 
-    <article class="blog-article">
-      <img src="static/images/iot-innovation.jpg" alt="Innovations in IoT">
-      <h2>Innovations in Internet of Things (IoT)</h2>
-      <p>The Internet of Things (IoT) has emerged as a transformative technology, reshaping industries and redefining how humans interact with the digital world. Initially referred to as the Embedded Internet, the concept was formalized in 1999 by Kevin Ashton, who envisioned a future where interconnected devices could communicate and share information autonomously. Since then, IoT has grown into a powerful network of physical objects embedded with sensors, software, and connectivity that enable real-time data exchange and intelligent decision-making.</p>
+    <div class="blog-grid">
+      <!-- Blog 1 -->
+      <div class="blog-card">
+        <img src="static/images/iot-innovation.jpg" alt="Innovations in IoT">
+        <div class="blog-card-content">
+          <h3>Innovations in Internet of Things (IoT)</h3>
+          <p>The Internet of Things (IoT) is transforming industries, from wearables to smart cities, enabling real-time data exchange and intelligent decision-making...</p>
+          <a href="blog1.html">Read More →</a>
+        </div>
+      </div>
 
-      <p>At the core of IoT lies the integration of embedded systems—compact, specialized hardware designed to perform dedicated functions. These systems typically include microcontrollers, sensors, and communication interfaces that enable the collection and transmission of data. Sensors play a crucial role in this ecosystem by detecting changes in the environment, such as temperature, pressure, motion, or biometrics. These components allow IoT devices to function autonomously, sensing conditions, processing data, and communicating insights to users or cloud platforms.</p>
+      <!-- Blog 2 -->
+      <div class="blog-card">
+        <img src="static/images/ai-devices.jpg" alt="AI in Devices">
+        <div class="blog-card-content">
+          <h3>AI in Everyday Devices</h3>
+          <p>Artificial intelligence is becoming part of daily life, powering smart assistants, automation, and intelligent systems that make life simpler...</p>
+          <a href="blog2.html">Read More →</a>
+        </div>
+      </div>
 
-      <p>One of the most prominent applications of IoT can be seen in wearable technology, such as fitness trackers and smartwatches. Devices like Fitbit utilize advanced sensors to monitor health parameters and physical activity. For instance, the Heart Rate Monitor (HRM) sensor continuously tracks a user's heartbeat using optical techniques, helping users keep track of their cardiovascular health. Similarly, the accelerometer sensor detects movement and acceleration, calculating the number of steps taken, distance traveled, and calories burned throughout the day. These sensors are vital in personal fitness and preventive healthcare, offering users real-time feedback on their physical well-being.</p>
+      <!-- Blog 3 -->
+      <div class="blog-card">
+        <img src="static/images/embedded-smartcities.jpg" alt="Embedded Systems">
+        <div class="blog-card-content">
+          <h3>Embedded Systems in Smart Cities</h3>
+          <p>Embedded systems play a vital role in urban planning, energy management, and transportation, enabling efficient and intelligent infrastructure...</p>
+          <a href="blog3.html">Read More →</a>
+        </div>
+      </div>
 
-      <p>Beyond personal health, IoT is also revolutionizing the healthcare industry at large. IoT-based medical devices can now monitor patients remotely, record vital signs like blood pressure and heart rate, and instantly alert nearby hospitals or family members in case of emergencies. This not only enhances the efficiency of medical response systems but also reduces the burden on healthcare facilities by enabling proactive care for chronic illnesses and elderly patients.</p>
+      <!-- Blog 4 -->
+      <div class="blog-card">
+        <img src="static/images/robotics-ai.jpg" alt="Robotics and AI">
+        <div class="blog-card-content">
+          <h3>Robotics & AI Integration</h3>
+          <p>Combining robotics with AI unlocks automation potential, from industrial robotics to personal assistants, creating smarter machines...</p>
+          <a href="blog4.html">Read More →</a>
+        </div>
+      </div>
 
-      <p>The reach of IoT extends into aerospace and aviation as well, where real-time monitoring and intelligent tracking are essential for safety and operational efficiency. Modern aircraft now incorporate IoT-enabled technologies like RFID (Radio Frequency Identification), BBT (Bluetooth-Based Tracking), and GPS (Global Positioning System) tools. RFID devices are used to track components and cargo through electromagnetic fields, enabling seamless identification and verification processes. BBT devices facilitate proximity tracking of equipment and goods within the aircraft, while GPS systems are crucial for navigation, asset tracking, and fleet management, both on the ground and in the sky.</p>
+      <!-- Blog 5 -->
+      <div class="blog-card">
+        <img src="static/images/vlsi-design.jpg" alt="VLSI Design">
+        <div class="blog-card-content">
+          <h3>VLSI Design Innovations</h3>
+          <p>Modern VLSI design enables smaller, faster, and more energy-efficient chips powering everything from smartphones to IoT devices...</p>
+          <a href="blog5.html">Read More →</a>
+        </div>
+      </div>
 
-      <p>As IoT devices become increasingly eco-friendly, efficient, and intelligent, their integration into everyday life continues to expand. From smart homes and connected vehicles to industrial automation and smart cities, IoT is creating a data-driven ecosystem that enhances quality of life, promotes sustainability, and improves decision-making. These innovations not only increase convenience and productivity but also pave the way for AI-driven automation, real-time analytics, and predictive maintenance across sectors.</p>
+      <!-- Blog 6 -->
+      <div class="blog-card">
+        <img src="static/images/embedded-iot.jpg" alt="Embedded IoT">
+        <div class="blog-card-content">
+          <h3>Embedded IoT Solutions</h3>
+          <p>Embedded systems combined with IoT create intelligent devices capable of automation, monitoring, and predictive maintenance across industries...</p>
+          <a href="blog6.html">Read More →</a>
+        </div>
+      </div>
 
-      <p>In conclusion, the Internet of Things is not just a technological trend—it is a foundational shift in how the world connects and communicates. As IoT continues to evolve, the fusion of hardware, software, and data intelligence will unlock new opportunities across healthcare, transportation, energy, and beyond. The next decade promises a more connected, intelligent, and efficient world—powered by IoT.</p>
+      <!-- Blog 7 -->
+      <div class="blog-card">
+        <img src="static/images/ml-applications.jpg" alt="Machine Learning">
+        <div class="blog-card-content">
+          <h3>Machine Learning Applications</h3>
+          <p>ML algorithms are transforming industries by providing predictive analytics, intelligent decision-making, and real-time insights...</p>
+          <a href="blog7.html">Read More →</a>
+        </div>
+      </div>
 
-      <p class="blog-author">— Written by BANGARI POOJITHA</p>
-    </article>
+      <!-- Blog 8 -->
+      <div class="blog-card">
+        <img src="static/images/uiux-design.jpg" alt="UI/UX">
+        <div class="blog-card-content">
+          <h3>UI/UX Design Trends</h3>
+          <p>Good UI/UX enhances user satisfaction, creating intuitive, accessible, and visually appealing experiences across digital platforms...</p>
+          <a href="blog8.html">Read More →</a>
+        </div>
+      </div>
+
+      <!-- Blog 9 -->
+      <div class="blog-card">
+        <img src="static/images/web-dev.jpg" alt="Web Development">
+        <div class="blog-card-content">
+          <h3>Full Stack Web Development</h3>
+          <p>Web development evolves rapidly, and full-stack solutions integrate front-end, back-end, and databases for seamless applications...</p>
+          <a href="blog9.html">Read More →</a>
+        </div>
+      </div>
+
+      <!-- Blog 10 -->
+      <div class="blog-card">
+        <img src="static/images/smart-automation.jpg" alt="Smart Automation">
+        <div class="blog-card-content">
+          <h3>Smart Automation in Industries</h3>
+          <p>Automation powered by AI, IoT, and robotics improves efficiency, reduces costs, and enhances production across sectors...</p>
+          <a href="blog10.html">Read More →</a>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <!-- Footer -->
@@ -80,7 +167,6 @@
     </div>
   </footer>
 
-  <!-- Hamburger Toggle Script -->
   <script>
     function toggleMenu() {
       document.querySelector('.nav-links').classList.toggle('expanded');
