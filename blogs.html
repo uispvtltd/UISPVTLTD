@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Innovations in IoT | United Integrated Services Pvt Ltd</title>
-  <link rel="stylesheet" href="static/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogs | United Integrated Services Pvt Ltd</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    body { margin:0; font-family: Arial, sans-serif; line-height:1.7; }
+    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; }
     .navbar { display:flex; align-items:center; justify-content:space-between; padding:10px 20px; background:#0a1f44; color:#fff; position:sticky; top:0; z-index:1000; }
     .nav-links a { margin-left:15px; color:#fff; text-decoration:none; }
     .nav-links a.active { border-bottom:2px solid #ffcc00; padding-bottom:2px; }
     .hamburger { display:none; cursor:pointer; font-size:24px; }
-    .blog-detail { max-width:900px; margin:60px auto; padding:20px; }
-    .blog-detail h1 { color:#0a1f44; margin-bottom:20px; }
-    .blog-detail .author { color:#555; margin-bottom:20px; font-style:italic; }
-    .blog-detail img { width:100%; height:auto; border-radius:10px; margin-bottom:20px; }
-    .blog-detail p { margin-bottom:20px; font-size:1.05em; color:#333; }
+    .blogs-section { max-width:1200px; margin:60px auto; padding:20px; }
+    .blogs-section h2 { text-align:center; margin-bottom:40px; color:#0a1f44; }
+    .blog-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px; }
+    .blog-card { border:1px solid #ddd; border-radius:10px; overflow:hidden; padding:15px; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+    .blog-card img { width:100%; height:auto; border-radius:10px; margin-bottom:15px; }
+    .blog-card h3 { color:#0a1f44; margin-bottom:10px; }
+    .blog-card p { color:#333; margin-bottom:10px; }
+    .blog-card button { background:#0a1f44; color:#fff; border:none; padding:8px 15px; border-radius:5px; cursor:pointer; }
+    .blog-card button:hover { background:#ffcc00; color:#0a1f44; }
     footer { background:#0a1f44; color:#fff; padding:20px; text-align:center; margin-top:40px; }
     .footer-logos img { margin:0 10px; vertical-align:middle; }
     @media(max-width:768px){ .hamburger { display:block; } .nav-links { display:none; flex-direction:column; } .nav-links.expanded { display:flex; } }
@@ -40,25 +44,122 @@
     </nav>
   </header>
 
-  <!-- Full Blog Content -->
-  <section class="blog-detail">
-    <h1>Innovations in Internet of Things (IoT)</h1>
-    <p class="author">By Bangari Poojitha</p>
-    <img src="static/images/iot-innovation.jpg" alt="IoT Innovations">
+  <!-- Blogs Section -->
+  <section class="blogs-section">
+    <h2>Latest Blogs & Insights</h2>
+    <div class="blog-grid">
 
-    <p>The Internet of Things (IoT) has emerged as a transformative technology, reshaping industries and redefining how humans interact with the digital world. Initially referred to as the Embedded Internet, the concept was formalized in 1999 by Kevin Ashton, who envisioned a future where interconnected devices could communicate and share information autonomously...</p>
+      <!-- Blog 1 -->
+      <div class="blog-card">
+        <img src="static/blog1.jpg" alt="Blog 1">
+        <h3>Innovations in Internet of Things (IoT)</h3>
+        <p class="blog-preview">The Internet of Things (IoT) has emerged as a transformative technology, reshaping industries and redefining human interaction with the digital world...</p>
+        <p class="blog-full" style="display:none;">
+          Initially referred to as the Embedded Internet, the concept was formalized in 1999 by Kevin Ashton... At the core of IoT lies the integration of embedded systems... One of the most prominent applications of IoT can be seen in wearable technology... Beyond personal health, IoT is revolutionizing the healthcare industry... The reach of IoT extends into aerospace and aviation... As IoT devices become increasingly eco-friendly... In conclusion, the Internet of Things is not just a technological trend—it is a foundational shift in connectivity...
+        </p>
+        <button onclick="toggleBlog(this)">Read More →</button>
+      </div>
 
-    <p>At the core of IoT lies the integration of embedded systems—compact, specialized hardware designed to perform dedicated functions. These systems typically include microcontrollers, sensors, and communication interfaces that enable the collection and transmission of data...</p>
+      <!-- Blog 2 -->
+      <div class="blog-card">
+        <img src="static/blog2.jpg" alt="Blog 2">
+        <h3>AI in Everyday Devices</h3>
+        <p class="blog-preview">From smart assistants to automation—how artificial intelligence is embedded in daily life and industries...</p>
+        <p class="blog-full" style="display:none;">
+          AI technologies are now integrated into smartphones, home devices, industrial equipment, and software platforms... They analyze data, automate processes, and improve decision-making... From voice assistants like Alexa to predictive analytics in factories, AI is changing how humans interact with technology...
+        </p>
+        <button onclick="toggleBlog(this)">Read More →</button>
+      </div>
 
-    <p>One of the most prominent applications of IoT can be seen in wearable technology, such as fitness trackers and smartwatches. Devices like Fitbit utilize advanced sensors to monitor health parameters and physical activity...</p>
+      <!-- Blog 3 -->
+      <div class="blog-card">
+        <img src="static/blog3.jpg" alt="Blog 3">
+        <h3>Embedded Systems in Smart Cities</h3>
+        <p class="blog-preview">Discover the vital role of embedded systems in urban planning, energy, transport, and smart infrastructure...</p>
+        <p class="blog-full" style="display:none;">
+          Embedded systems monitor traffic, control streetlights, manage energy grids, and collect environmental data... Sensors and microcontrollers enable real-time decision-making for efficient urban management... Smart city projects rely heavily on this technology for sustainability and safety...
+        </p>
+        <button onclick="toggleBlog(this)">Read More →</button>
+      </div>
 
-    <p>Beyond personal health, IoT is also revolutionizing the healthcare industry at large. IoT-based medical devices can now monitor patients remotely, record vital signs like blood pressure and heart rate, and instantly alert nearby hospitals or family members in case of emergencies...</p>
+      <!-- Blog 4 -->
+      <div class="blog-card">
+        <img src="static/blog4.jpg" alt="Blog 4">
+        <h3>Robotics in Manufacturing</h3>
+        <p class="blog-preview">Robots are transforming industrial production lines, increasing efficiency and safety...</p>
+        <p class="blog-full" style="display:none;">
+          Modern manufacturing integrates robotic arms, automated guided vehicles, and AI-driven quality control systems... Robotics reduces human error, speeds production, and enhances workplace safety...
+        </p>
+        <button onclick="toggleBlog(this)">Read More →</button>
+      </div>
 
-    <p>The reach of IoT extends into aerospace and aviation as well, where real-time monitoring and intelligent tracking are essential for safety and operational efficiency...</p>
+      <!-- Blog 5 -->
+      <div class="blog-card">
+        <img src="static/blog5.jpg" alt="Blog 5">
+        <h3>VLSI Innovations in Electronics</h3>
+        <p class="blog-preview">Explore the breakthroughs in Very-Large-Scale Integration (VLSI) that enable powerful, compact electronic devices...</p>
+        <p class="blog-full" style="display:none;">
+          VLSI technology allows thousands of transistors to be integrated into a single chip, enabling smartphones, IoT devices, and microcontrollers... Advances in fabrication processes continue to shrink chip sizes while increasing performance and efficiency...
+        </p>
+        <button onclick="toggleBlog(this)">Read More →</button>
+      </div>
 
-    <p>As IoT devices become increasingly eco-friendly, efficient, and intelligent, their integration into everyday life continues to expand. From smart homes and connected vehicles to industrial automation and smart cities, IoT is creating a data-driven ecosystem that enhances quality of life, promotes sustainability, and improves decision-making...</p>
+      <!-- Blog 6 -->
+      <div class="blog-card">
+        <img src="static/blog6.jpg" alt="Blog 6">
+        <h3>Machine Learning in Data Analytics</h3>
+        <p class="blog-preview">Machine learning is transforming data into actionable insights across industries...</p>
+        <p class="blog-full" style="display:none;">
+          Algorithms learn patterns in historical data, enabling predictive analytics, anomaly detection, and recommendation systems... Industries such as finance, healthcare, and e-commerce rely on ML for faster and more accurate decision-making...
+        </p>
+        <button onclick="toggleBlog(this)">Read More →</button>
+      </div>
 
-    <p>In conclusion, the Internet of Things is not just a technological trend—it is a foundational shift in how the world connects and communicates. As IoT continues to evolve, the fusion of hardware, software, and data intelligence will unlock new opportunities across healthcare, transportation, energy, and beyond...</p>
+      <!-- Blog 7 -->
+      <div class="blog-card">
+        <img src="static/blog7.jpg" alt="Blog 7">
+        <h3>AI-Powered Robotics</h3>
+        <p class="blog-preview">Combining AI with robotics enhances automation, precision, and adaptability in real-world applications...</p>
+        <p class="blog-full" style="display:none;">
+          AI-driven robots can perceive their environment, plan actions, and learn from experiences... Applications include warehouse automation, surgical robots, and autonomous vehicles, improving safety and efficiency...
+        </p>
+        <button onclick="toggleBlog(this)">Read More →</button>
+      </div>
+
+      <!-- Blog 8 -->
+      <div class="blog-card">
+        <img src="static/blog8.jpg" alt="Blog 8">
+        <h3>Full Stack Development Trends</h3>
+        <p class="blog-preview">Full stack development integrates front-end, back-end, and database technologies for seamless applications...</p>
+        <p class="blog-full" style="display:none;">
+          Modern frameworks like React, Node.js, and Django allow developers to build scalable and responsive applications... Best practices include responsive design, API integration, and security considerations...
+        </p>
+        <button onclick="toggleBlog(this)">Read More →</button>
+      </div>
+
+      <!-- Blog 9 -->
+      <div class="blog-card">
+        <img src="static/blog9.jpg" alt="Blog 9">
+        <h3>UI/UX Design Principles</h3>
+        <p class="blog-preview">Good UI/UX design enhances user engagement, satisfaction, and overall experience...</p>
+        <p class="blog-full" style="display:none;">
+          Principles include consistency, clarity, feedback, and accessibility... Tools like Figma, Adobe XD, and Sketch help designers create intuitive and visually appealing interfaces...
+        </p>
+        <button onclick="toggleBlog(this)">Read More →</button>
+      </div>
+
+      <!-- Blog 10 -->
+      <div class="blog-card">
+        <img src="static/blog10.jpg" alt="Blog 10">
+        <h3>AI in Healthcare</h3>
+        <p class="blog-preview">AI is revolutionizing healthcare by enabling remote monitoring, diagnosis, and personalized treatment...</p>
+        <p class="blog-full" style="display:none;">
+          AI algorithms analyze patient data, predict diseases, and recommend treatment plans... Applications include medical imaging, virtual health assistants, and predictive analytics for hospitals...
+        </p>
+        <button onclick="toggleBlog(this)">Read More →</button>
+      </div>
+
+    </div>
   </section>
 
   <!-- Footer -->
@@ -78,6 +179,20 @@
   <script>
     function toggleMenu() {
       document.querySelector('.nav-links').classList.toggle('expanded');
+    }
+
+    function toggleBlog(button) {
+      const fullText = button.previousElementSibling; // selects .blog-full
+      const preview = fullText.previousElementSibling; // selects .blog-preview
+      if(fullText.style.display === "none") {
+        fullText.style.display = "block";
+        preview.style.display = "none";
+        button.textContent = "Show Less ↑";
+      } else {
+        fullText.style.display = "none";
+        preview.style.display = "block";
+        button.textContent = "Read More →";
+      }
     }
   </script>
 
