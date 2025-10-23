@@ -4,129 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>United Integrated Services Pvt Ltd</title>
-
-  <!-- Google Site Verification -->
-  <meta name="google-site-verification" content="CyNaNVQOvQYAMEI7o-_-loFTJfWErt013AYwY6aZuRE" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-  <style>
-    /* Reset and Base */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background-color: #f4f6fa; color: #333; line-height: 1.6; }
-
-    /* Navbar */
-    .navbar {
-      display: flex; justify-content: space-between; align-items: center;
-      background-color: #0a1f44; color: #fff; padding: 12px 25px;
-      position: sticky; top: 0; z-index: 1000;
-      flex-wrap: wrap;
-    }
-    .navbar img { height: 55px; }
-    .nav-links { display: flex; align-items: center; gap: 15px; }
-    .nav-links a {
-      color: #fff; text-decoration: none; font-weight: 500;
-      padding: 6px 0; transition: color 0.3s, border-bottom 0.3s;
-    }
-    .nav-links a:hover, .nav-links a.active {
-      color: #ffcc00; border-bottom: 2px solid #ffcc00;
-    }
-    .hamburger { display: none; font-size: 26px; cursor: pointer; }
-
-    /* Hero Section */
-    .video-hero {
-      position: relative; height: 90vh; overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center; color: #fff; background: #000;
-    }
-    .bg-video {
-      position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%; object-fit: cover;
-      opacity: 0; transition: opacity 1.5s ease; z-index: -2;
-    }
-    .video-hero::before {
-      content: ""; position: absolute; top: 0; left: 0;
-      width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: -1;
-    }
-    .bg-video.loaded { opacity: 1; }
-    .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 20px; }
-    .hero-content h1 { font-size: 3em; margin-bottom: 15px; }
-    .hero-content p { font-size: 1.3em; margin-bottom: 25px; }
-    .hero-buttons button {
-      padding: 12px 25px; border: none; border-radius: 5px; margin: 0 10px;
-      font-size: 1em; cursor: pointer; transition: background 0.3s, color 0.3s;
-    }
-    .hero-buttons button:hover { transform: scale(1.05); }
-    .hero-buttons .outline {
-      background: transparent; border: 2px solid #fff; color: #fff;
-    }
-
-    /* Clients Section */
-    .clients { padding: 70px 20px; text-align: center; background: #f7f9fc; }
-    .clients h2 { font-size: 2.2em; color: #0a1f44; margin-bottom: 35px; }
-    .client-logos img { max-width: 180px; margin: 0 15px; transition: transform 0.4s; }
-    .client-logos img:hover { transform: scale(1.1); }
-
-    /* Technologies - Corporate Style */
-    .technologies { padding: 70px 20px; background: #fff; text-align: center; }
-    .technologies h2 { font-size: 2.2em; color: #0a1f44; margin-bottom: 50px; }
-    .tech-corporate-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px; justify-items: center; align-items: stretch;
-    }
-    .tech-corporate-item {
-      background: #f9f9f9; border-radius: 12px; padding: 25px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08); text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .tech-corporate-item:hover {
-      transform: translateY(-10px); box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-    }
-    .tech-corporate-item img { width: 80px; margin-bottom: 15px; }
-    .tech-corporate-item h4 { color: #0a1f44; margin-bottom: 10px; }
-    .tech-corporate-item p { font-size: 0.95rem; color: #444; }
-
-    /* Footer */
-    footer {
-      background: #0a1f44; color: #fff; text-align: center;
-      padding: 25px 15px;
-    }
-    footer p { margin-bottom: 10px; }
-    .footer-logos img { margin: 0 10px; vertical-align: middle; }
-
-    /* Responsive */
-    @media(max-width:768px){
-      .hamburger { display: block; }
-      .nav-links { display: none; flex-direction: column; background: #0a1f44; width: 100%; }
-      .nav-links.expanded { display: flex; }
-      .nav-links a { padding: 10px; border-top: 1px solid rgba(255,255,255,0.2); }
-      .hero-content h1 { font-size: 2em; }
-      .tech-corporate-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="static/style.css" />
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <a href="index.html"><img src="static/images/logo.jpeg" alt="UIS Logo"></a>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <nav class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="contact.html">Contact</a>
-      <a href="blogs.html">Blogs</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
+ <!-- Header -->
+<header class="navbar" id="navbar">
+  <a href="index.html" class="logo">
+    <img src="static/images/logo.jpeg" alt="Company Logo" style="height:50px;">
+  </a>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="login.html" class="login-btn">Login</a>
+  </div>
+</header>
+
 
   <!-- Hero Section -->
   <section class="video-hero">
-    <video autoplay muted loop playsinline class="bg-video" poster="static/images/video-placeholder.jpg">
-      <source src="static/videos/tech-background.webm" type="video/webm">
+    <video autoplay muted loop playsinline class="bg-video">
       <source src="static/videos/tech-background.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -140,57 +41,49 @@
     </div>
   </section>
 
-  <!-- Clients Section -->
+  <!-- Clients -->
   <section class="clients">
     <h2>Our Partners</h2>
     <div class="client-logos">
-      <img src="static/images/iot-semiconductors.jpg" alt="IoT Semiconductors" />
+      <img src="static/images/vardhan-projects.jpg" alt="Vardhan's Projects" /> <!-- New Partner -->
     </div>
   </section>
 
-  <!-- Technologies Section -->
+  <!-- Technologies -->
   <section class="technologies">
     <h2>Technologies We Work On</h2>
-    <div class="tech-corporate-grid">
-      <div class="tech-corporate-item">
+    <div class="tech-grid">
+      <div class="tech-item">
         <img src="static/images/iot.jpg" alt="IoT">
-        <h4>Internet of Things (IoT)</h4>
-        <p>Smart devices, sensors, and connected solutions for enterprises and consumers.</p>
+        <span>IoT</span>
       </div>
-      <div class="tech-corporate-item">
+      <div class="tech-item">
         <img src="static/images/vlsi.jpg" alt="VLSI">
-        <h4>VLSI Design</h4>
-        <p>Custom chip design and semiconductor solutions for high-performance systems.</p>
+        <span>VLSI</span>
       </div>
-      <div class="tech-corporate-item">
-        <img src="static/images/embedded.jpg" alt="Embedded">
-        <h4>Embedded Systems</h4>
-        <p>Firmware and hardware integration for real-time, reliable embedded solutions.</p>
+      <div class="tech-item">
+        <img src="static/images/embedded.jpg" alt="Embedded Systems">
+        <span>Embedded Systems</span>
       </div>
-      <div class="tech-corporate-item">
-        <img src="static/images/ml.jpg" alt="ML">
-        <h4>Machine Learning</h4>
-        <p>Intelligent algorithms to optimize processes and analyze data efficiently.</p>
+      <div class="tech-item">
+        <img src="static/images/ml.jpg" alt="Machine Learning">
+        <span>Machine Learning</span>
       </div>
-      <div class="tech-corporate-item">
-        <img src="static/images/ai.jpg" alt="AI">
-        <h4>Artificial Intelligence</h4>
-        <p>AI-driven solutions to enhance automation, insights, and predictive analytics.</p>
+      <div class="tech-item">
+        <img src="static/images/ai.jpg" alt="Artificial Intelligence">
+        <span>Artificial Intelligence</span>
       </div>
-      <div class="tech-corporate-item">
+      <div class="tech-item">
         <img src="static/images/robotics.jpg" alt="Robotics">
-        <h4>Robotics</h4>
-        <p>Automation, control systems, and smart robotics for industrial and commercial use.</p>
+        <span>Robotics</span>
       </div>
-      <div class="tech-corporate-item">
-        <img src="static/images/web.jpg" alt="Web Dev">
-        <h4>Web Development</h4>
-        <p>Modern web solutions with responsive, secure, and scalable architectures.</p>
+      <div class="tech-item">
+        <img src="static/images/web.jpg" alt="Full Stack Web Development">
+        <span>Full Stack Web Dev</span>
       </div>
-      <div class="tech-corporate-item">
-        <img src="static/images/uiux.jpg" alt="UI/UX">
-        <h4>UI / UX Design</h4>
-        <p>Professional design experiences that improve usability and engagement.</p>
+      <div class="tech-item">
+        <img src="static/images/uiux.jpg" alt="UI/UX Design">
+        <span>UI/UX Design</span>
       </div>
     </div>
   </section>
@@ -198,24 +91,18 @@
   <!-- Footer -->
   <footer>
     <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD</p>
-    <div class="footer-logos">
-      <img src="static/images/ofit.jpg" alt="OFIT" style="height:40px;">
-      <a href="https://www.linkedin.com/company/united-integrated-services-pvt-ltd/" target="_blank">
-        <img src="static/images/linkedin.jpg" alt="LinkedIn" width="24">
-      </a>
-      <a href="https://www.instagram.com/uispvtltd/reels/" target="_blank">
-        <img src="static/images/instagram.jpg" alt="Instagram" width="24">
-      </a>
+    <div class="socials">
+      <img src="static/images/linkedin.jpg" alt="LinkedIn" width="24">
+      <img src="static/images/instagram.jpg" alt="Instagram" width="24">
     </div>
   </footer>
 
-  <!-- JS -->
+  <!-- Hamburger Toggle -->
   <script>
     function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('expanded');
+      document.getElementById('navbar').classList.toggle('expanded');
     }
-    const video = document.querySelector('.bg-video');
-    video.addEventListener('loadeddata', () => { video.classList.add('loaded'); });
   </script>
+
 </body>
 </html>
