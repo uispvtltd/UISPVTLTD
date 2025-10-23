@@ -38,7 +38,8 @@
 
     /* Hero Section */
     .hero {
-      background: #0a1f44; /* Solid dark blue background */
+      position: relative;
+      background: #0a1f44;
       color: #fff;
       text-align: center;
       padding: 120px 20px;
@@ -194,16 +195,14 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    AOS.init({ duration: 1000, once: true });
+
     function toggleMenu() {
       document.querySelector('.nav-links').classList.toggle('expanded');
     }
-
-    AOS.init({ duration: 1000, once: true });
   </script>
-
-  <!-- AOS Library -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </body>
 </html>
