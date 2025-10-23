@@ -24,16 +24,13 @@
     /* Products Section */
     .products-section { max-width:1200px; margin:60px auto; padding:20px; }
     .products-section h1 { text-align:center; color:#0a1f44; margin-bottom:40px; font-size:2.4em; }
-    .category-title { color:#0a1f44; margin:40px 0 20px; font-size:1.8em; border-bottom:2px solid #ffcc00; display:inline-block; padding-bottom:5px; }
     .product-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px; }
 
     .product-card { background:#fff; border-radius:10px; overflow:hidden; padding:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s; }
     .product-card:hover { transform: translateY(-5px); }
     .product-card img { width:100%; height:auto; border-radius:10px; margin-bottom:15px; }
     .product-card h3 { color:#0a1f44; margin-bottom:10px; }
-    .product-card p { color:#555; margin-bottom:15px; }
-    .product-card button { background:#0a1f44; color:#fff; padding:8px 15px; border:none; border-radius:5px; cursor:pointer; transition:all 0.3s; }
-    .product-card button:hover { background:#ffcc00; color:#0a1f44; }
+    .product-card p { color:#555; }
 
     /* Footer */
     footer { background:#0a1f44; color:#fff; padding:20px; text-align:center; margin-top:40px; }
@@ -68,58 +65,28 @@
   <!-- Products Section -->
   <section class="products-section">
     <h1>Our Products</h1>
-
-    <!-- VLSI Products -->
-    <h2 class="category-title">VLSI</h2>
     <div class="product-grid">
+      <!-- CHIPSETRON -->
       <div class="product-card">
-        <img src="static/images/chipsetron.jpg" alt="Chipsetron">
-        <h3>Chipsetron</h3>
-        <p>Advanced VLSI chipset for embedded processing.</p>
-        <button>Add to Inquiry</button>
+        <img src="static/images/chipsetron.jpg" alt="CHIPSETRON">
+        <h3>CHIPSETRON</h3>
+        <p>Advanced IoT Controller</p>
       </div>
+
+      <!-- Coretrion -->
       <div class="product-card">
         <img src="static/images/coretrion.jpg" alt="Coretrion">
         <h3>Coretrion</h3>
-        <p>High-performance processor core for RISC-based designs.</p>
-        <button>Add to Inquiry</button>
+        <p>Advanced IoT Core</p>
       </div>
-    </div>
 
-    <!-- IoT Products -->
-    <h2 class="category-title">IoT</h2>
-    <div class="product-grid">
+      <!-- Smart Cart -->
       <div class="product-card">
         <img src="static/images/smartcart.jpg" alt="Smart Cart">
         <h3>Smart Cart</h3>
-        <p>Intelligent IoT-enabled smart cart for retail automation.</p>
-        <button>Add to Inquiry</button>
+        <p>Intelligent IoT-enabled smart cart for automation</p>
       </div>
     </div>
-
-    <!-- AI / Embedded Products -->
-    <h2 class="category-title">AI & Embedded</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="static/images/product1.jpg" alt="Smart AI Controller">
-        <h3>Smart AI Controller</h3>
-        <p>Advanced processing for embedded AI systems.</p>
-        <button>Add to Inquiry</button>
-      </div>
-      <div class="product-card">
-        <img src="static/images/product2.jpg" alt="IoT Sensor Module">
-        <h3>IoT Sensor Module</h3>
-        <p>Real-time sensing and cloud integration.</p>
-        <button>Add to Inquiry</button>
-      </div>
-      <div class="product-card">
-        <img src="static/images/product3.jpg" alt="DataViz Suite">
-        <h3>DataViz Suite</h3>
-        <p>AI-powered data visualization dashboard.</p>
-        <button>Add to Inquiry</button>
-      </div>
-    </div>
-
   </section>
 
   <!-- Footer -->
