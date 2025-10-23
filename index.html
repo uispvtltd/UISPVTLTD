@@ -5,13 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>United Integrated Services Pvt Ltd</title>
 
-  <!-- Font Awesome for icons -->
+  <!-- Favicon -->
+  <link rel="icon" href="static/images/logo.jpeg" type="image/jpeg">
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Meta Tags for SEO -->
+  <meta name="description" content="United Integrated Services Pvt Ltd - Empowering Innovation in IoT, AI, VLSI, Robotics, and Embedded Systems.">
+  <meta name="keywords" content="IoT, AI, VLSI, Robotics, Embedded Systems, Machine Learning, Web Development, United Integrated Services, Coretrion, Chipsetron">
+  <meta name="author" content="United Integrated Services Pvt Ltd">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph Tags for Social Media -->
+  <meta property="og:title" content="United Integrated Services Pvt Ltd">
+  <meta property="og:description" content="Empowering Innovation in Smart Systems, IoT & AI.">
+  <meta property="og:image" content="https://uispvtltd.github.io/United-Integrated-Services-Pvt-Ltd/static/images/logo.jpeg">
+  <meta property="og:url" content="https://uispvtltd.github.io/United-Integrated-Services-Pvt-Ltd/">
+
   <style>
-    /* Reset & base */
+    /* Base Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; background: #f7f9fc; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; background: #f7f9fc; overflow-x: hidden; }
 
     /* Navbar */
     .navbar {
@@ -20,9 +39,7 @@
       position: sticky; top: 0; z-index: 1000; flex-wrap: wrap;
     }
     .navbar img { height: 50px; }
-    .nav-links {
-      display: flex; gap: 18px; align-items: center;
-    }
+    .nav-links { display: flex; gap: 18px; align-items: center; }
     .nav-links a {
       text-decoration: none; color: #fff; font-weight: 500;
       padding: 6px 0; transition: all 0.3s ease;
@@ -30,9 +47,7 @@
     .nav-links a:hover, .nav-links a.active {
       color: #ffcc00; border-bottom: 2px solid #ffcc00;
     }
-    .hamburger {
-      display: none; font-size: 26px; cursor: pointer;
-    }
+    .hamburger { display: none; font-size: 26px; cursor: pointer; }
 
     /* Hero Section */
     .video-hero {
@@ -50,11 +65,9 @@
     }
     .bg-video.loaded { opacity: 1; }
 
-    .hero-content {
-      position: relative; z-index: 2; max-width: 800px; padding: 0 20px;
-    }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 20px; }
     .hero-content h1 { font-size: 3em; margin-bottom: 15px; }
-    .hero-content p { font-size: 1.3em; margin-bottom: 30px; }
+    .hero-content p { font-size: 1.3em; margin-bottom: 30px; color: #eee; }
     .hero-buttons button {
       padding: 12px 30px; font-size: 1em; border-radius: 6px; border: none;
       cursor: pointer; margin: 0 10px; transition: all 0.3s ease;
@@ -63,25 +76,34 @@
     .hero-buttons .outline { background: transparent; border: 2px solid #fff; color: #fff; }
     .hero-buttons button.primary { background: #ffcc00; color: #0a1f44; }
 
-    /* Clients Section */
-    .clients { padding: 70px 20px; text-align: center; }
+    .scroll-down {
+      position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+      font-size: 2em; color: #ffcc00; animation: bounce 1.8s infinite;
+      z-index: 3; cursor: pointer;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+      40% { transform: translate(-50%, -10px); }
+      60% { transform: translate(-50%, -5px); }
+    }
+
+    /* Clients */
+    .clients { padding: 70px 20px; text-align: center; background: #fff; }
     .clients h2 { font-size: 2.2em; margin-bottom: 40px; color: #0a1f44; }
-    .client-logos img { max-width: 180px; margin: 0 15px; transition: transform 0.4s; }
+    .client-logos img { max-width: 180px; margin: 15px; transition: transform 0.4s; border-radius: 8px; }
     .client-logos img:hover { transform: scale(1.1); }
 
-    /* Technologies Section */
-    .technologies { padding: 70px 20px; text-align: center; }
+    /* Technologies */
+    .technologies { padding: 70px 20px; text-align: center; background: #f7f9fc; }
     .technologies h2 { font-size: 2.2em; margin-bottom: 50px; color: #0a1f44; }
     .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 30px; justify-items: center;
     }
     .tech-item {
       background: #fff; padding: 25px; border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
-      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s; text-align: center;
     }
     .tech-item:hover { transform: translateY(-10px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
     .tech-item img { width: 80px; margin-bottom: 15px; border-radius: 10%; }
@@ -89,11 +111,18 @@
 
     /* Footer */
     footer {
-      background: #0a1f44; color: #fff; text-align: center; padding: 25px 15px;
+      background: #0a1f44; color: #fff; padding: 40px 20px; text-align: center;
     }
-    footer p { margin-bottom: 12px; font-size: 0.95em; }
+    .footer-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px; text-align: left; margin-bottom: 20px;
+    }
+    footer h4 { color: #ffcc00; margin-bottom: 10px; }
+    footer a { color: #ddd; text-decoration: none; display: block; margin-bottom: 6px; }
+    footer a:hover { color: #ffcc00; }
     .socials img { margin: 0 10px; vertical-align: middle; transition: transform 0.3s; cursor: pointer; }
     .socials img:hover { transform: scale(1.2); }
+    footer p { font-size: 0.9em; margin-top: 15px; }
 
     /* Responsive */
     @media(max-width:768px){
@@ -106,13 +135,12 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
   <header class="navbar" id="navbar">
-    <a href="index.html" class="logo">
-      <img src="static/images/logo.jpeg" alt="Company Logo">
-    </a>
+    <a href="index.html"><img src="static/images/logo.jpeg" alt="Company Logo"></a>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
@@ -120,56 +148,72 @@
       <a href="products.html">Products</a>
       <a href="contact.html">Contact</a>
       <a href="blogs.html">Blogs</a>
-      <a href="login.html" class="login-btn">Login</a>
+      <a href="login.html">Login</a>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="video-hero">
-    <video autoplay muted loop playsinline class="bg-video">
+    <video autoplay muted loop playsinline class="bg-video" id="heroVideo">
       <source src="static/videos/tech-background.mp4" type="video/mp4">
-      Your browser does not support the video tag.
     </video>
-    <div class="hero-content">
+    <div class="hero-content" data-aos="fade-up">
       <h1>Welcome to United Integrated Services Pvt Ltd</h1>
-      <p>Empowering Innovation in Smart Systems & AI</p>
+      <p>Empowering Innovation in Smart Systems, IoT & AI</p>
       <div class="hero-buttons">
         <a href="products.html"><button class="primary">Explore Products</button></a>
         <a href="contact.html"><button class="outline">Contact Us</button></a>
       </div>
     </div>
+    <a href="#technologies" class="scroll-down"><i class="fa-solid fa-angles-down"></i></a>
   </section>
 
-  <!-- Clients Section -->
-  <section class="clients">
+  <!-- Clients -->
+  <section class="clients" data-aos="fade-up">
     <h2>Our Partners</h2>
     <div class="client-logos">
-      <img src="static/images/vardhan-projects.jpg" alt="Vardhan's Projects" />
+      <img src="static/images/vardhan-projects.jpg" alt="Vardhan's Projects" loading="lazy">
     </div>
   </section>
 
-  <!-- Technologies Section -->
-  <section class="technologies">
+  <!-- Technologies -->
+  <section class="technologies" id="technologies" data-aos="fade-up">
     <h2>Technologies We Work On</h2>
     <div class="tech-grid">
-      <div class="tech-item"><img src="static/images/iot.jpg" alt="IoT"><span>IoT</span></div>
-      <div class="tech-item"><img src="static/images/vlsi.jpg" alt="VLSI"><span>VLSI</span></div>
-      <div class="tech-item"><img src="static/images/embedded.jpg" alt="Embedded"><span>Embedded Systems</span></div>
-      <div class="tech-item"><img src="static/images/ml.jpg" alt="ML"><span>Machine Learning</span></div>
-      <div class="tech-item"><img src="static/images/ai.jpg" alt="AI"><span>Artificial Intelligence</span></div>
-      <div class="tech-item"><img src="static/images/robotics.jpg" alt="Robotics"><span>Robotics</span></div>
-      <div class="tech-item"><img src="static/images/web.jpg" alt="Web Dev"><span>Full Stack Web Dev</span></div>
-      <div class="tech-item"><img src="static/images/uiux.jpg" alt="UI/UX"><span>UI/UX Design</span></div>
+      <div class="tech-item" data-aos="zoom-in"><img src="static/images/iot.jpg" alt="IoT" loading="lazy"><span>IoT</span></div>
+      <div class="tech-item" data-aos="zoom-in"><img src="static/images/vlsi.jpg" alt="VLSI" loading="lazy"><span>VLSI</span></div>
+      <div class="tech-item" data-aos="zoom-in"><img src="static/images/embedded.jpg" alt="Embedded Systems" loading="lazy"><span>Embedded Systems</span></div>
+      <div class="tech-item" data-aos="zoom-in"><img src="static/images/ml.jpg" alt="Machine Learning" loading="lazy"><span>Machine Learning</span></div>
+      <div class="tech-item" data-aos="zoom-in"><img src="static/images/ai.jpg" alt="AI" loading="lazy"><span>Artificial Intelligence</span></div>
+      <div class="tech-item" data-aos="zoom-in"><img src="static/images/robotics.jpg" alt="Robotics" loading="lazy"><span>Robotics</span></div>
+      <div class="tech-item" data-aos="zoom-in"><img src="static/images/web.jpg" alt="Web Development" loading="lazy"><span>Full Stack Web Dev</span></div>
+      <div class="tech-item" data-aos="zoom-in"><img src="static/images/uiux.jpg" alt="UI/UX Design" loading="lazy"><span>UI/UX Design</span></div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD</p>
-    <div class="socials">
-      <img src="static/images/linkedin.jpg" alt="LinkedIn" width="24">
-      <img src="static/images/instagram.jpg" alt="Instagram" width="24">
+    <div class="footer-grid">
+      <div>
+        <h4>Contact Us</h4>
+        <p>Email: info@uispvtltd.com</p>
+        <p>Phone: +91-9876543210</p>
+        <p>Address: Hyderabad, India</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="blogs.html">Blogs</a>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <a href="#"><img src="static/images/linkedin.jpg" alt="LinkedIn" width="24"></a>
+        <a href="#"><img src="static/images/instagram.jpg" alt="Instagram" width="24"></a>
+      </div>
     </div>
+    <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD | All Rights Reserved</p>
   </footer>
 
   <!-- Scripts -->
@@ -177,8 +221,15 @@
     function toggleMenu() {
       document.querySelector('.nav-links').classList.toggle('expanded');
     }
-    const video = document.querySelector('.bg-video');
-    video.addEventListener('loadeddata', () => { video.classList.add('loaded'); });
+
+    const video = document.getElementById('heroVideo');
+    video.addEventListener('loadeddata', () => video.classList.add('loaded'));
+
+    AOS.init({ duration: 1000, once: true });
   </script>
+
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 </body>
 </html>
