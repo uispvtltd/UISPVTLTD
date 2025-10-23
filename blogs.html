@@ -24,8 +24,11 @@
     .blog-card button:hover { background:#ffcc00; color:#0a1f44; }
     footer { background:#0a1f44; color:#fff; padding:20px; text-align:center; margin-top:40px; }
     .footer-logos img { margin:0 10px; vertical-align:middle; }
-    @media(max-width:768px){ .hamburger { display:block; } .nav-links { display:none; flex-direction:column; } .nav-links.expanded { display:flex; } }
-
+    @media(max-width:768px){
+      .hamburger { display:block; }
+      .nav-links { display:none; flex-direction:column; }
+      .nav-links.expanded { display:flex; }
+    }
     /* Modal Styles */
     .modal { display:none; position:fixed; z-index:1001; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,0.8); }
     .modal-content { background:#fff; margin:50px auto; padding:20px; border-radius:10px; max-width:800px; position:relative; }
@@ -58,7 +61,7 @@
   <section class="blogs-section">
     <h2>Latest Blogs & Insights</h2>
     <div class="blog-grid">
-
+      
       <!-- Blog 1 -->
       <div class="blog-card">
         <img src="static/images/blog1.jpg" alt="Innovations in IoT">
@@ -81,57 +84,68 @@
       <div class="blog-card">
         <img src="static/images/blog3.png" alt="Privacy and Security">
         <h3>Privacy and Security in IoT</h3>
-        <p class="author">By YVD Kausthubh</p>
+        <p class="author">By Achugatla Munni</p>
         <p>Security in IoT can be classified into three types — Edge devices, Cloud computing, and User interface...</p>
         <button onclick="openModal('modal3')">Read More →</button>
       </div>
 
       <!-- Blog 4 -->
       <div class="blog-card">
-        <img src="static/images/blog4.jpg" alt="IoT and Sustainability">
-        <h3>IoT and Sustainability</h3>
+        <img src="static/images/blog4.jpg" alt="AI in IoT">
+        <h3>AI-Powered Innovations Transforming IoT Systems</h3>
         <p class="author">By Bandi Bhargavi</p>
-        <p>Sustainability in IoT focuses on weather monitoring, soil pressure measurement, and data-driven automation...</p>
+        <p>Artificial Intelligence (AI) and IoT are together revolutionizing industries through smart automation...</p>
         <button onclick="openModal('modal4')">Read More →</button>
       </div>
 
     </div>
   </section>
 
+  <!-- Modals -->
+  <!-- Blog 1 Modal -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h2>Innovations in Internet of Things (IoT)</h2>
+      <p class="author">By Bangari Poojitha</p>
+      <img src="static/images/blog1.jpg" alt="Innovations in IoT">
+      <p>The Internet of Things (IoT) has emerged as a transformative technology, reshaping industries and redefining how humans interact with the digital world...</p>
+      <p>At the core of IoT lies the integration of embedded systems—compact, specialized hardware designed to perform dedicated functions...</p>
+    </div>
+  </div>
+
+  <!-- Blog 2 Modal -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h2>The Internet of Things (IoT): Consumer, Commercial, and Industrial Perspectives</h2>
+      <p class="author">By Darshanam Devaki</p>
+      <img src="static/images/blog2.jpeg" alt="IoT Perspectives">
+      <p>The Internet of Things (IoT) has revolutionized the way industries, businesses, and individuals interact with technology...</p>
+    </div>
+  </div>
+
+  <!-- Blog 3 Modal -->
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h2>Privacy and Security in IoT</h2>
+      <p class="author">By Achugatla Munni</p>
+      <img src="static/images/blog3.png" alt="Privacy and Security">
+      <p>‘PRIVACY AND SECURITY’ are crucial aspects of IoT. In security, there are mainly three classifications: Edge Devices, Cloud Computing, and User Interface...</p>
+    </div>
+  </div>
+
   <!-- Blog 4 Modal -->
   <div id="modal4" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modal4')">&times;</span>
-      <h2>IoT and Sustainability</h2>
+      <h2>AI-Powered Innovations Transforming IoT Systems</h2>
       <p class="author">By Bandi Bhargavi</p>
-      <img src="static/images/blog4.jpg" alt="IoT and Sustainability">
-      <p><strong>What is Sustainability?</strong><br>
-      Sustainability in the Internet of Things (IoT) refers to using smart, automated systems to monitor and optimize environmental resources such as energy, water, and air quality. IoT devices measure parameters like temperature, soil moisture, and pressure, and automatically correct errors to ensure accurate data collection.</p>
-
-      <p>It plays a vital role in building eco-friendly and efficient environments by analyzing patterns in data collected from sensors and improving system reliability.</p>
-
-      <h3>Examples of IoT Devices Under Sustainability</h3>
-      <ul>
-        <li>Smart Energy Meters</li>
-        <li>Environmental Sensors</li>
-        <li>Water Management Systems</li>
-        <li>Waste Management Sensors</li>
-      </ul>
-
-      <h3>1. Smart Energy Meters</h3>
-      <p>These meters calculate energy usage and identify where energy efficiency can be improved. They help monitor power consumption in homes, industries, and offices.</p>
-
-      <h3>2. Environmental Sensors</h3>
-      <p>These sensors measure atmospheric conditions such as temperature, humidity, and wind speed. For example, the <strong>anemometer</strong> is used to measure wind speed and direction.</p>
-
-      <h4>Types of Anemometers</h4>
-      <ul>
-        <li><strong>Cup Anemometer:</strong> Measures wind speed using rotating cups that turn with airflow.</li>
-        <li><strong>Vane Anemometer:</strong> Measures wind velocity and volume using a propeller-type turbine.</li>
-        <li><strong>Sonic Anemometer:</strong> Uses ultrasonic sound waves to detect wind direction and speed.</li>
-      </ul>
-
-      <p>These devices are widely used in weather stations and IoT-based environmental monitoring systems to ensure real-time climate analysis.</p>
+      <img src="static/images/blog4.jpg" alt="AI in IoT">
+      <p>Artificial Intelligence (AI) and IoT together form a powerful technological ecosystem known as AIoT. By combining AI-driven analytics with IoT’s vast data generation capabilities, industries are achieving unprecedented efficiency, automation, and decision-making accuracy.</p>
+      <p>AI algorithms process sensor data in real time, allowing IoT devices to make intelligent predictions—whether for predictive maintenance, smart agriculture, or autonomous robotics. This convergence is creating smarter systems that not only sense but also think and act proactively.</p>
+      <p>From smart cities to healthcare monitoring, AIoT continues to redefine the possibilities of connected intelligence, marking the next revolution in automation.</p>
     </div>
   </div>
 
@@ -148,6 +162,7 @@
     </div>
   </footer>
 
+  <!-- Script -->
   <script>
     function toggleMenu() {
       document.querySelector('.nav-links').classList.toggle('expanded');
@@ -165,6 +180,5 @@
       });
     }
   </script>
-
 </body>
 </html>
