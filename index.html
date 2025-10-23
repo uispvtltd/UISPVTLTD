@@ -8,46 +8,49 @@
   <!-- Google Site Verification -->
   <meta name="google-site-verification" content="CyNaNVQOvQYAMEI7o-_-loFTJfWErt013AYwY6aZuRE" />
 
-  <!-- Styles -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    /* Reset and base */
+    /* Reset and Base */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background-color: #fff; line-height: 1.6; color: #333; }
+    body { font-family: 'Poppins', sans-serif; background-color: #f4f6fa; color: #333; line-height: 1.6; }
 
     /* Navbar */
     .navbar {
       display: flex; justify-content: space-between; align-items: center;
       background-color: #0a1f44; color: #fff; padding: 12px 25px;
       position: sticky; top: 0; z-index: 1000;
+      flex-wrap: wrap;
     }
     .navbar img { height: 55px; }
+    .nav-links { display: flex; align-items: center; gap: 15px; }
     .nav-links a {
-      color: #fff; text-decoration: none; margin: 0 12px;
-      transition: color 0.3s, border-bottom 0.3s;
+      color: #fff; text-decoration: none; font-weight: 500;
+      padding: 6px 0; transition: color 0.3s, border-bottom 0.3s;
     }
     .nav-links a:hover, .nav-links a.active {
-      color: #ffcc00; border-bottom: 2px solid #ffcc00; padding-bottom: 2px;
+      color: #ffcc00; border-bottom: 2px solid #ffcc00;
     }
-    .hamburger {
-      display: none; font-size: 26px; cursor: pointer; color: #fff;
-    }
+    .hamburger { display: none; font-size: 26px; cursor: pointer; }
 
     /* Hero Section */
     .video-hero {
       position: relative; height: 90vh; overflow: hidden;
       display: flex; align-items: center; justify-content: center;
-      color: #fff; text-align: center; background: #000;
+      text-align: center; color: #fff; background: #000;
     }
     .bg-video {
       position: absolute; top: 0; left: 0;
       width: 100%; height: 100%; object-fit: cover;
-      opacity: 0; transition: opacity 1.5s ease;
-      z-index: -1;
+      opacity: 0; transition: opacity 1.5s ease; z-index: -2;
+    }
+    .video-hero::before {
+      content: ""; position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: -1;
     }
     .bg-video.loaded { opacity: 1; }
-    .hero-content { z-index: 2; max-width: 800px; padding: 0 20px; }
+    .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 20px; }
     .hero-content h1 { font-size: 3em; margin-bottom: 15px; }
     .hero-content p { font-size: 1.3em; margin-bottom: 25px; }
     .hero-buttons button {
@@ -62,34 +65,28 @@
     /* Clients Section */
     .clients { padding: 70px 20px; text-align: center; background: #f7f9fc; }
     .clients h2 { font-size: 2.2em; color: #0a1f44; margin-bottom: 35px; }
-    .client-logos img {
-      max-width: 180px; margin: 0 15px; transition: transform 0.4s;
-    }
+    .client-logos img { max-width: 180px; margin: 0 15px; transition: transform 0.4s; }
     .client-logos img:hover { transform: scale(1.1); }
 
-    /* Technologies Section */
-    .technologies { padding: 70px 20px; text-align: center; }
-    .technologies h2 { font-size: 2.2em; color: #0a1f44; margin-bottom: 40px; }
-    .tech-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 30px; justify-items: center; align-items: start;
+    /* Technologies - Corporate Style */
+    .technologies { padding: 70px 20px; background: #fff; text-align: center; }
+    .technologies h2 { font-size: 2.2em; color: #0a1f44; margin-bottom: 50px; }
+    .tech-corporate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px; justify-items: center; align-items: stretch;
     }
-    .tech-item {
-      background: #fff; padding: 20px; border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    .tech-corporate-item {
+      background: #f9f9f9; border-radius: 12px; padding: 25px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08); text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
-      text-align: center;
     }
-    .tech-item:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    .tech-corporate-item:hover {
+      transform: translateY(-10px); box-shadow: 0 12px 25px rgba(0,0,0,0.15);
     }
-    .tech-item img {
-      width: 80px; margin-bottom: 10px; border-radius: 10%;
-    }
-    .tech-item span {
-      display: block; font-weight: bold; color: #0a1f44;
-    }
+    .tech-corporate-item img { width: 80px; margin-bottom: 15px; }
+    .tech-corporate-item h4 { color: #0a1f44; margin-bottom: 10px; }
+    .tech-corporate-item p { font-size: 0.95rem; color: #444; }
 
     /* Footer */
     footer {
@@ -99,13 +96,14 @@
     footer p { margin-bottom: 10px; }
     .footer-logos img { margin: 0 10px; vertical-align: middle; }
 
-    /* Responsive Design */
-    @media(max-width: 768px) {
+    /* Responsive */
+    @media(max-width:768px){
       .hamburger { display: block; }
       .nav-links { display: none; flex-direction: column; background: #0a1f44; width: 100%; }
       .nav-links.expanded { display: flex; }
       .nav-links a { padding: 10px; border-top: 1px solid rgba(255,255,255,0.2); }
       .hero-content h1 { font-size: 2em; }
+      .tech-corporate-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -150,52 +148,52 @@
     </div>
   </section>
 
- <!-- Technologies Section -->
-<section class="technologies">
-  <h2>Technologies We Work On</h2>
-  <div class="tech-corporate-grid">
-    <div class="tech-corporate-item">
-      <img src="static/images/iot.jpg" alt="IoT">
-      <h4>Internet of Things (IoT)</h4>
-      <p>Smart devices, sensors, and connected solutions for enterprises and consumers.</p>
+  <!-- Technologies Section -->
+  <section class="technologies">
+    <h2>Technologies We Work On</h2>
+    <div class="tech-corporate-grid">
+      <div class="tech-corporate-item">
+        <img src="static/images/iot.jpg" alt="IoT">
+        <h4>Internet of Things (IoT)</h4>
+        <p>Smart devices, sensors, and connected solutions for enterprises and consumers.</p>
+      </div>
+      <div class="tech-corporate-item">
+        <img src="static/images/vlsi.jpg" alt="VLSI">
+        <h4>VLSI Design</h4>
+        <p>Custom chip design and semiconductor solutions for high-performance systems.</p>
+      </div>
+      <div class="tech-corporate-item">
+        <img src="static/images/embedded.jpg" alt="Embedded">
+        <h4>Embedded Systems</h4>
+        <p>Firmware and hardware integration for real-time, reliable embedded solutions.</p>
+      </div>
+      <div class="tech-corporate-item">
+        <img src="static/images/ml.jpg" alt="ML">
+        <h4>Machine Learning</h4>
+        <p>Intelligent algorithms to optimize processes and analyze data efficiently.</p>
+      </div>
+      <div class="tech-corporate-item">
+        <img src="static/images/ai.jpg" alt="AI">
+        <h4>Artificial Intelligence</h4>
+        <p>AI-driven solutions to enhance automation, insights, and predictive analytics.</p>
+      </div>
+      <div class="tech-corporate-item">
+        <img src="static/images/robotics.jpg" alt="Robotics">
+        <h4>Robotics</h4>
+        <p>Automation, control systems, and smart robotics for industrial and commercial use.</p>
+      </div>
+      <div class="tech-corporate-item">
+        <img src="static/images/web.jpg" alt="Web Dev">
+        <h4>Web Development</h4>
+        <p>Modern web solutions with responsive, secure, and scalable architectures.</p>
+      </div>
+      <div class="tech-corporate-item">
+        <img src="static/images/uiux.jpg" alt="UI/UX">
+        <h4>UI / UX Design</h4>
+        <p>Professional design experiences that improve usability and engagement.</p>
+      </div>
     </div>
-    <div class="tech-corporate-item">
-      <img src="static/images/vlsi.jpg" alt="VLSI">
-      <h4>VLSI Design</h4>
-      <p>Custom chip design and semiconductor solutions for high-performance systems.</p>
-    </div>
-    <div class="tech-corporate-item">
-      <img src="static/images/embedded.jpg" alt="Embedded">
-      <h4>Embedded Systems</h4>
-      <p>Firmware and hardware integration for real-time, reliable embedded solutions.</p>
-    </div>
-    <div class="tech-corporate-item">
-      <img src="static/images/ml.jpg" alt="ML">
-      <h4>Machine Learning</h4>
-      <p>Intelligent algorithms to optimize processes and analyze data efficiently.</p>
-    </div>
-    <div class="tech-corporate-item">
-      <img src="static/images/ai.jpg" alt="AI">
-      <h4>Artificial Intelligence</h4>
-      <p>AI-driven solutions to enhance automation, insights, and predictive analytics.</p>
-    </div>
-    <div class="tech-corporate-item">
-      <img src="static/images/robotics.jpg" alt="Robotics">
-      <h4>Robotics</h4>
-      <p>Automation, control systems, and smart robotics for industrial and commercial use.</p>
-    </div>
-    <div class="tech-corporate-item">
-      <img src="static/images/web.jpg" alt="Web Dev">
-      <h4>Web Development</h4>
-      <p>Modern web solutions with responsive, secure, and scalable architectures.</p>
-    </div>
-    <div class="tech-corporate-item">
-      <img src="static/images/uiux.jpg" alt="UI/UX">
-      <h4>UI / UX Design</h4>
-      <p>Professional design experiences that improve usability and engagement.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- Footer -->
   <footer>
@@ -211,7 +209,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- JS -->
   <script>
     function toggleMenu() {
       document.querySelector('.nav-links').classList.toggle('expanded');
@@ -219,6 +217,5 @@
     const video = document.querySelector('.bg-video');
     video.addEventListener('loadeddata', () => { video.classList.add('loaded'); });
   </script>
-
 </body>
 </html>
