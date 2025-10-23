@@ -4,41 +4,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact – United Integrated Services Pvt Ltd</title>
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="static/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; margin:0; padding:0; background:#f7f9fc; color:#333; }
+
+    /* Navbar */
+    .navbar {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:12px 30px; background-color:#0a1f44; color:#fff;
+      position:sticky; top:0; z-index:1000; flex-wrap:wrap;
+    }
+    .navbar img { height:50px; }
+    .nav-links { display:flex; gap:20px; align-items:center; }
+    .nav-links a { text-decoration:none; color:#fff; font-weight:500; padding:6px 0; transition:all 0.3s ease; }
+    .nav-links a:hover, .nav-links a.active { color:#ffcc00; border-bottom:2px solid #ffcc00; }
+    .hamburger { display:none; font-size:26px; cursor:pointer; }
+    @media(max-width:768px){
+      .hamburger { display:block; }
+      .nav-links { display:none; flex-direction:column; width:100%; background:#0a1f44; }
+      .nav-links.expanded { display:flex; }
+      .nav-links a { padding:12px; border-top:1px solid rgba(255,255,255,0.2); }
+    }
+
+    /* Contact Section */
+    .contact-section { max-width:1200px; margin:60px auto; padding:20px; text-align:center; }
+    .contact-section h1 { color:#0a1f44; font-size:2.4em; margin-bottom:20px; }
+    .contact-section p { color:#555; margin-bottom:40px; font-size:1.1em; }
+
+    .contact-container { display:flex; justify-content:space-between; gap:50px; flex-wrap:wrap; }
+    
+    .contact-info, .contact-form { flex:1; min-width:300px; background:#fff; padding:30px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.08); }
+    
+    .contact-info p { font-size:1em; margin-bottom:15px; color:#0a1f44; }
+    .contact-info i { margin-right:10px; color:#ffcc00; }
+
+    .contact-form input, .contact-form textarea {
+      width:100%; padding:12px; margin-bottom:20px; border-radius:8px; border:1px solid #ccc; font-size:1em;
+      transition: border-color 0.3s ease;
+    }
+    .contact-form input:focus, .contact-form textarea:focus { border-color:#0a1f44; outline:none; }
+    .contact-form button {
+      background:#ffcc00; color:#0a1f44; font-weight:bold; padding:12px 25px; border:none; border-radius:25px;
+      cursor:pointer; transition:all 0.3s ease;
+    }
+    .contact-form button:hover { transform: scale(1.05); }
+
+    /* Footer */
+    footer { background:#0a1f44; color:#fff; padding:25px; text-align:center; margin-top:50px; }
+    .socials a { margin:0 10px; color:#fff; font-size:20px; transition: transform 0.3s; }
+    .socials a:hover { transform: scale(1.2); }
+
+  </style>
 </head>
 <body>
 
-  <!-- Header with Hamburger -->
+  <!-- Navbar -->
   <header class="navbar" id="navbar">
-  <a href="index.html" class="logo">
-    <img src="static/images/logo.jpeg" alt="Company Logo" style="height:50px;">
-  </a>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="products.html">Products</a>
-    <a href="contact.html">Contact</a>
-    <a href="blogs.html">Blogs</a>
-    <a href="login.html" class="login-btn">Login</a>
-  </div>
-</header>
+    <a href="index.html" class="logo"><img src="static/images/logo.jpeg" alt="Company Logo"></a>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
   <!-- Contact Section -->
   <section class="contact-section">
-    <h1>Contact Us</h1>
-    <p>We'd love to hear from you! Reach out for inquiries, partnerships, or support.</p>
+    <h1 data-aos="fade-up">Contact Us</h1>
+    <p data-aos="fade-up" data-aos-delay="100">We'd love to hear from you! Reach out for inquiries, partnerships, or support.</p>
 
     <div class="contact-container">
       <!-- Contact Info -->
-      <div class="contact-info">
-        <p><i class="fas fa-envelope"></i> unitedintegratedservicespvtltd@gmail.com</p>
-        <p><i class="fas fa-phone"></i> +91 89782 95589</p>
+      <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+        <p><i class="fas fa-envelope"></i> <a href="mailto:unitedintegratedservicespvtltd@gmail.com">unitedintegratedservicespvtltd@gmail.com</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+918978295589">+91 89782 95589</a></p>
         <p><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana, India</p>
       </div>
 
       <!-- Contact Form -->
-      <form class="contact-form" action="#" method="POST">
+      <form class="contact-form" action="#" method="POST" data-aos="fade-left" data-aos-delay="300">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
@@ -51,16 +104,16 @@
   <footer>
     <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD</p>
     <div class="socials">
-      <i class="fab fa-linkedin"></i>
-      <i class="fab fa-instagram"></i>
+      <a href="https://www.linkedin.com/company/united-integrated-services-pvt-ltd/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/uispvtltd/reels/" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
   </footer>
 
-  <!-- Hamburger Toggle Script -->
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    function toggleMenu() {
-      document.getElementById('navbar').classList.toggle('expanded');
-    }
+    AOS.init({ duration:1000, once:true });
+    function toggleMenu() { document.querySelector('.nav-links').classList.toggle('expanded'); }
   </script>
 
 </body>
