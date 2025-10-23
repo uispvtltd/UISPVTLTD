@@ -68,6 +68,15 @@
         <button onclick="openModal('modal1')">Read More →</button>
       </div>
 
+      <!-- Blog 2 -->
+      <div class="blog-card">
+        <img src="static/images/blog2.jpg" alt="IoT Perspectives">
+        <h3>The Internet of Things (IoT): Consumer, Commercial, and Industrial Perspectives</h3>
+        <p class="author">By Darshanam Devaki</p>
+        <p>The Internet of Things (IoT) has revolutionized the way industries, businesses, and individuals interact...</p>
+        <button onclick="openModal('modal2')">Read More →</button>
+      </div>
+
     </div>
   </section>
 
@@ -90,18 +99,33 @@
     </div>
   </div>
 
-  <!-- Footer -->
-<footer>
-  <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD</p>
-  <div class="footer-logos" style="margin-top:10px;">
-    <a href="https://www.linkedin.com/company/united-integrated-services-pvt-ltd/" target="_blank">
-      <img src="static/images/linkedin.jpg" alt="LinkedIn" width="30" style="margin-right:10px;">
-    </a>
-    <a href="https://www.instagram.com/uispvtltd/reels/" target="_blank">
-      <img src="static/images/instagram.jpg" alt="Instagram" width="30">
-    </a>
+  <!-- Modal 2 -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h2>The Internet of Things (IoT): Consumer, Commercial, and Industrial Perspectives</h2>
+      <p class="author">By Darshanam Devaki</p>
+      <img src="static/images/blog2.jpg" alt="IoT Perspectives">
+      <p>The Internet of Things (IoT) has revolutionized the way industries, businesses, and individuals interact with technology. It connects physical devices, sensors, and systems to the internet, allowing them to collect and exchange data seamlessly...</p>
+      <p>Consumer IoT, often abbreviated as CIoT, refers to smart technology designed for everyday consumers and personal environments. These include smartphones, smartwatches, doorbells, and wearable fitness trackers...</p>
+      <p>Commercial IoT focuses on smart automation in offices, malls, hotels, and hospitals. It uses sensors such as infrared and ultrasonic detectors in systems like automatic taps, hand dryers, and lighting controls...</p>
+      <p>Industrial IoT (IIoT) scales IoT to large-scale enterprise operations, integrating sensors, actuators, and AI for predictive maintenance, smart manufacturing, logistics, and agriculture...</p>
+      <p>In conclusion, IoT is not just a futuristic concept but a current driving force behind digital transformation across industries. As IoT merges with AI and big data, it will continue to define the future of connectivity, automation, and efficiency...</p>
+    </div>
   </div>
-</footer>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD</p>
+    <div class="footer-logos" style="margin-top:10px;">
+      <a href="https://www.linkedin.com/company/united-integrated-services-pvt-ltd/" target="_blank">
+        <img src="static/images/linkedin.jpg" alt="LinkedIn" width="30" style="margin-right:10px;">
+      </a>
+      <a href="https://www.instagram.com/uispvtltd/reels/" target="_blank">
+        <img src="static/images/instagram.jpg" alt="Instagram" width="30">
+      </a>
+    </div>
+  </footer>
 
   <script>
     function toggleMenu() {
