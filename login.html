@@ -4,45 +4,106 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login – United Integrated Services Pvt Ltd</title>
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="static/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <style>
+    body { margin: 0; font-family: 'Poppins', sans-serif; background: #000; color: #fff; }
+
+    /* Navbar */
+    .navbar {
+      width: 100%; background: #0a1f44; display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 30px; position: sticky; top: 0; z-index: 1000;
+    }
+    .navbar img { height: 50px; }
+    .nav-links { display: flex; align-items: center; gap: 18px; }
+    .nav-links a { text-decoration: none; color: #fff; font-weight: 500; padding: 6px 0; transition: all 0.3s ease; }
+    .nav-links a:hover, .nav-links a.active { color: #ffcc00; border-bottom: 2px solid #ffcc00; }
+    .hamburger { display: none; font-size: 26px; cursor: pointer; color: #fff; }
+    @media(max-width:768px){
+      .nav-links { display: none; flex-direction: column; width: 100%; background: #0a1f44; position: absolute; top: 70px; left: 0; padding: 20px 0; }
+      .nav-links.expanded { display: flex; }
+      .nav-links a { padding: 12px; border-top: 1px solid rgba(255,255,255,0.2); }
+      .hamburger { display: block; }
+    }
+
+    /* Hero background video */
+    .login-hero { position: relative; height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+    .login-hero::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index:1; }
+    .bg-video { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0; opacity:0; transition: opacity 1.5s ease; }
+    .bg-video.loaded { opacity:1; }
+
+    /* Login/Register Card */
+    .login-container { position: relative; z-index: 2; max-width: 400px; width: 90%; background: #0a1f44; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; }
+    .login-container h2 { margin-bottom: 25px; color: #ffcc00; font-size: 2em; }
+    .login-container form { display: flex; flex-direction: column; gap: 20px; }
+    .login-container input { padding: 12px 15px; border-radius: 8px; border: none; font-size: 1em; }
+    .login-container input:focus { outline: none; box-shadow: 0 0 8px #ffcc00; }
+    .login-container button { padding: 12px; border-radius: 8px; border: none; font-size: 1em; cursor: pointer; background: #ffcc00; color: #0a1f44; font-weight: bold; transition: all 0.3s; }
+    .login-container button:hover { transform: scale(1.05); }
+    .toggle-link { font-size: 0.9em; color: #fff; }
+    .toggle-link a { color: #ffcc00; text-decoration: none; }
+    .toggle-link a:hover { text-decoration: underline; }
+    .hidden { display: none; }
+
+    /* Footer */
+    footer { background: #0a1f44; color: #fff; padding: 20px; text-align: center; }
+    .socials a { margin: 0 10px; color: #fff; font-size: 20px; transition: transform 0.3s; }
+    .socials a:hover { transform: scale(1.2); }
+
+    @media(max-width:480px){
+      .login-container { padding: 30px 20px; }
+    }
+  </style>
 </head>
 <body>
-<header class="navbar" id="navbar">
-  <a href="index.html" class="logo">
-    <img src="static/images/logo.jpeg" alt="Company Logo" style="height:50px;">
-  </a>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="products.html">Products</a>
-    <a href="contact.html">Contact</a>
-    <a href="blogs.html">Blogs</a>
-    <a href="login.html" class="login-btn">Login</a>
-  </div>
-</header>
-  <!-- Login/Register Section -->
-  <section class="login-section">
-    <div class="login-box">
-      <h2>Login</h2>
-      <form>
-        <input type="email" placeholder="Email" required />
-        <input type="password" placeholder="Password" required />
-        <button type="submit">Login</button>
-        <p class="toggle-link">Don't have an account? <a href="#" onclick="toggleForm()">Register</a></p>
-      </form>
-    </div>
 
-    <div class="register-box hidden">
-      <h2>Register</h2>
-      <form>
-        <input type="text" placeholder="Full Name" required />
-        <input type="email" placeholder="Email" required />
-        <input type="password" placeholder="Password" required />
-        <button type="submit">Register</button>
-        <p class="toggle-link">Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>
-      </form>
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <a href="index.html"><img src="static/images/logo.jpeg" alt="Logo"></a>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="login.html" class="active">Login</a>
+    </div>
+  </header>
+
+  <!-- Hero Section with login card -->
+  <section class="login-hero">
+    <video autoplay muted loop playsinline class="bg-video" id="heroVideo">
+      <source src="static/videos/tech-background.mp4" type="video/mp4">
+    </video>
+
+    <div class="login-container" data-aos="fade-up">
+      <!-- Login Form -->
+      <div class="login-box">
+        <h2>Login</h2>
+        <form>
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit">Login</button>
+          <p class="toggle-link">Don't have an account? <a href="#" onclick="toggleForm()">Register</a></p>
+        </form>
+      </div>
+
+      <!-- Register Form -->
+      <div class="register-box hidden">
+        <h2>Register</h2>
+        <form>
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit">Register</button>
+          <p class="toggle-link">Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -50,21 +111,32 @@
   <footer>
     <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD</p>
     <div class="socials">
-      <i class="fab fa-linkedin"></i>
-      <i class="fab fa-instagram"></i>
+      <a href="https://www.linkedin.com/company/united-integrated-services-pvt-ltd/" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.instagram.com/uispvtltd/reels/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
     </div>
   </footer>
 
-  <!-- Script: Toggle Login/Register -->
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    // Navbar toggle
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('expanded');
+    }
+    // Login/Register toggle
     function toggleForm() {
       document.querySelector('.login-box').classList.toggle('hidden');
       document.querySelector('.register-box').classList.toggle('hidden');
     }
-
-    function toggleMenu() {
-      document.getElementById('navbar').classList.toggle('expanded');
-    }
+    // Video load
+    const video = document.getElementById('heroVideo');
+    video.addEventListener('loadeddata', () => video.classList.add('loaded'));
+    // AOS animations
+    AOS.init({ duration: 1000, once: true });
   </script>
 
 </body>
