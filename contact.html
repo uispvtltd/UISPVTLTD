@@ -25,7 +25,7 @@
 
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior: smooth; }
+    html, body { overflow-x: hidden; scroll-behavior:smooth; }
     body { font-family:'Poppins',sans-serif; background:#f7f9fc; color:#333; }
 
     /* Navbar */
@@ -82,6 +82,7 @@
       border-radius:25px;
       cursor:pointer;
       transition:all 0.3s ease;
+      width:100%;
     }
     .contact-form button:hover { transform: scale(1.05); background:#ffd633; }
 
@@ -148,12 +149,22 @@
       <p><i class="fas fa-envelope"></i> <a href="mailto:uispvtltd2025@gmail.com">uispvtltd2025@gmail.com</a></p>
       <p><i class="fas fa-phone"></i> <a href="tel:+918978295589">+91 89782 95589</a></p>
       <p><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana, India</p>
+      <a href="https://wa.me/918978295589?text=Hello%20UIS%20Team%2C%20I%20have%20an%20inquiry%20regarding%20your%20services."
+         target="_blank" style="display:inline-block;margin-top:10px;background:#25d366;color:#fff;padding:10px 20px;border-radius:25px;text-decoration:none;font-weight:600;">
+         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
     </div>
 
     <!-- Contact Form -->
-    <form class="contact-form" action="#" method="POST" data-aos="fade-left" data-aos-delay="300">
+    <form class="contact-form" action="https://formsubmit.co/uispvtltd2025@gmail.com" method="POST" data-aos="fade-left" data-aos-delay="300">
+      <!-- Hidden configuration -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Contact Message from UIS Website!">
+      <input type="hidden" name="_next" value="https://uispvtltd.github.io/United-Integrated-Services-Pvt-Ltd/thankyou.html">
+
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
+      <input type="tel" name="phone" placeholder="Your Phone Number" />
       <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
       <button type="submit">Send Message</button>
     </form>
