@@ -11,48 +11,124 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
   <style>
-    body { font-family: 'Poppins', sans-serif; margin:0; padding:0; background:#f7f9fc; color:#333; }
+    body { 
+      font-family: 'Poppins', sans-serif; 
+      margin:0; 
+      padding:0; 
+      background:#f7f9fc; 
+      color:#333; 
+    }
 
     /* Navbar */
     .navbar {
-      display:flex; justify-content:space-between; align-items:center;
-      padding:12px 30px; background-color:#0a1f44; color:#fff;
-      position:sticky; top:0; z-index:1000; flex-wrap:wrap;
+      display:flex; 
+      justify-content:space-between; 
+      align-items:center;
+      padding:12px 30px; 
+      background-color:#0a1f44; 
+      color:#fff;
+      position:sticky; 
+      top:0; 
+      z-index:1000; 
+      flex-wrap:wrap;
     }
     .navbar img { height:50px; }
     .nav-links { display:flex; gap:20px; align-items:center; }
-    .nav-links a { text-decoration:none; color:#fff; font-weight:500; padding:6px 0; transition:all 0.3s ease; }
-    .nav-links a:hover, .nav-links a.active { color:#ffcc00; border-bottom:2px solid #ffcc00; }
+    .nav-links a { 
+      text-decoration:none; 
+      color:#fff; 
+      font-weight:500; 
+      padding:6px 0; 
+      transition:all 0.3s ease; 
+    }
+    .nav-links a:hover, .nav-links a.active { 
+      color:#ffcc00; 
+      border-bottom:2px solid #ffcc00; 
+    }
     .hamburger { display:none; font-size:26px; cursor:pointer; }
 
     @media(max-width:768px){
       .hamburger { display:block; }
-      .nav-links { display:none; flex-direction:column; width:100%; background:#0a1f44; }
+      .nav-links { 
+        display:none; 
+        flex-direction:column; 
+        width:100%; 
+        background:#0a1f44; 
+      }
       .nav-links.expanded { display:flex; }
-      .nav-links a { padding:12px; border-top:1px solid rgba(255,255,255,0.2); }
+      .nav-links a { 
+        padding:12px; 
+        border-top:1px solid rgba(255,255,255,0.2); 
+      }
     }
 
     /* Products Section */
-    .products-section { max-width:1200px; margin:60px auto; padding:20px; text-align:center; }
-    .products-section h1 { color:#0a1f44; margin-bottom:50px; font-size:2.4em; }
-    .product-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:30px; }
+    .products-section { 
+      max-width:1200px; 
+      margin:60px auto; 
+      padding:20px; 
+      text-align:center; 
+    }
+    .products-section h1 { 
+      color:#0a1f44; 
+      margin-bottom:50px; 
+      font-size:2.4em; 
+    }
+    .product-grid { 
+      display:grid; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap:30px; 
+    }
 
-    .product-card { background:#fff; border-radius:15px; padding:20px; box-shadow:0 10px 25px rgba(0,0,0,0.1); transition: all 0.3s ease; }
-    .product-card:hover { transform: translateY(-8px); box-shadow:0 15px 30px rgba(0,0,0,0.15); }
-    .product-card img { width:100%; height:180px; object-fit:cover; border-radius:12px; margin-bottom:15px; }
-    .product-card h3 { color:#0a1f44; margin-bottom:10px; font-size:1.3em; }
-    .product-card p { color:#555; margin-bottom:15px; font-size:1em; }
-    .product-card a.btn { display:inline-block; padding:10px 20px; border-radius:25px; background:#ffcc00; color:#0a1f44; font-weight:bold; text-decoration:none; transition: all 0.3s; }
+    .product-card { 
+      background:#fff; 
+      border-radius:15px; 
+      padding:20px; 
+      box-shadow:0 10px 25px rgba(0,0,0,0.1); 
+      transition: all 0.3s ease; 
+    }
+    .product-card:hover { 
+      transform: translateY(-8px); 
+      box-shadow:0 15px 30px rgba(0,0,0,0.15); 
+    }
+    .product-card img { 
+      width:100%; 
+      height:180px; 
+      object-fit:cover; 
+      border-radius:12px; 
+      margin-bottom:15px; 
+    }
+    .product-card h3 { 
+      color:#0a1f44; 
+      margin-bottom:10px; 
+      font-size:1.3em; 
+    }
+    .product-card p { 
+      color:#555; 
+      margin-bottom:15px; 
+      font-size:1em; 
+    }
+    .product-card a.btn { 
+      display:inline-block; 
+      padding:10px 20px; 
+      border-radius:25px; 
+      background:#ffcc00; 
+      color:#0a1f44; 
+      font-weight:bold; 
+      text-decoration:none; 
+      transition: all 0.3s; 
+    }
     .product-card a.btn:hover { transform: scale(1.05); }
 
-    /* Footer */
+    /* Footer (matched exactly with About page) */
     footer {
       background-color:#0a1f44;
       color:#fff;
-      padding:50px 20px;
       text-align:center;
+      padding:40px 20px;
+      margin-top:60px;
     }
-    .footer-content {
+    .footer-grid {
       display:flex;
       flex-wrap:wrap;
       justify-content:space-around;
@@ -60,27 +136,37 @@
       gap:30px;
       max-width:1200px;
       margin:auto;
+      text-align:left;
     }
-    .footer-section h3 {
+    .footer-grid div {
+      flex:1 1 250px;
+    }
+    footer h4 {
       color:#ffcc00;
-      margin-bottom:15px;
+      margin-bottom:10px;
       font-size:1.2em;
     }
-    .footer-section p, .footer-section a {
-      color:#ccc;
-      font-size:0.95em;
+    footer p, footer a {
+      color:#ddd;
       text-decoration:none;
-      line-height:1.6;
+      font-size:0.95em;
+      display:block;
+      margin:5px 0;
     }
-    .footer-section a:hover { color:#ffcc00; }
-    .socials a { margin:0 10px; color:#fff; font-size:20px; transition: transform 0.3s; }
-    .socials a:hover { transform:scale(1.2); color:#ffcc00; }
-    .footer-bottom {
-      margin-top:30px;
-      border-top:1px solid rgba(255,255,255,0.2);
-      padding-top:20px;
+    footer a:hover {
+      color:#ffcc00;
+    }
+    footer img {
+      vertical-align:middle;
+      margin:0 5px;
+    }
+    footer > p {
+      margin-top:25px;
       font-size:0.9em;
       color:#ccc;
+    }
+    @media(max-width:768px){
+      .footer-grid { text-align:center; }
     }
   </style>
 </head>
@@ -125,29 +211,34 @@
     </div>
   </section>
 
-  <!-- Footer (Matched with About Page) -->
+  <!-- Footer (exactly matched with About page) -->
   <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>United Integrated Services Pvt Ltd</h3>
-        <p>Innovating advanced IoT and semiconductor solutions for a smarter future.</p>
+    <div class="footer-grid">
+      <div>
+        <h4>Contact Us</h4>
+        <p>Email: <a href="mailto:uispvtltd2025@gmail.com">uispvtltd2025@gmail.com</a></p>
+        <p>Phone: <a href="tel:+918978295589">+91 8978295589</a></p>
+        <p>Address: Hyderabad, India</p>
       </div>
-      <div class="footer-section">
-        <h3>Contact Us</h3>
-        <p><i class="fas fa-phone"></i> +91 8978295589</p>
-        <p><i class="fas fa-envelope"></i> uispvtltd2025@gmail.com</p>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="careers.html">Careers</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html">Contact</a>
       </div>
-      <div class="footer-section">
-        <h3>Follow Us</h3>
-        <div class="socials">
-          <a href="https://www.linkedin.com/company/united-integrated-services-pvt-ltd/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/uispvtltd/reels/" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
+      <div>
+        <h4>Follow Us</h4>
+        <a href="https://www.linkedin.com/company/united-integrated-services-pvt-ltd/" target="_blank">
+          <img src="static/images/linkedin.jpg" alt="LinkedIn" width="24">
+        </a>
+        <a href="https://www.instagram.com/uispvtltd/reels/" target="_blank">
+          <img src="static/images/instagram.jpg" alt="Instagram" width="24">
+        </a>
       </div>
     </div>
-    <div class="footer-bottom">
-      © 2025 UNITED INTEGRATED SERVICES PVT LTD | All Rights Reserved
-    </div>
+    <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD | All Rights Reserved</p>
   </footer>
 
   <!-- Scripts -->
