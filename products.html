@@ -3,173 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products – United Integrated Services Pvt Ltd</title>
+  <title>Products | United Integrated Services Pvt Ltd</title>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="static/style.css" />
+  <!-- Favicon -->
+  <link rel="icon" href="static/images/logo.jpeg" type="image/jpeg">
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Explore innovative products by United Integrated Services Pvt Ltd including CHIPSETRON: Advanced IoT Controller, Coretrion: Advanced IoT Core, and Smart Cart.">
+  <meta name="keywords" content="CHIPSETRON, Coretrion, Smart Cart, IoT Controller, IoT Core, United Integrated Services, Products">
+  <meta name="author" content="United Integrated Services Pvt Ltd">
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- AOS Animation Library -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="static/style.css" />
+
   <style>
-    body { 
-      font-family: 'Poppins', sans-serif; 
-      margin:0; 
-      padding:0; 
-      background:#f7f9fc; 
-      color:#333; 
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background-color: #f7f9fc; color: #333; overflow-x: hidden; }
 
     /* Navbar */
-    .navbar {
-      display:flex; 
-      justify-content:space-between; 
-      align-items:center;
-      padding:12px 30px; 
-      background-color:#0a1f44; 
-      color:#fff;
-      position:sticky; 
-      top:0; 
-      z-index:1000; 
-      flex-wrap:wrap;
-    }
-    .navbar img { height:50px; }
-    .nav-links { display:flex; gap:20px; align-items:center; }
-    .nav-links a { 
-      text-decoration:none; 
-      color:#fff; 
-      font-weight:500; 
-      padding:6px 0; 
-      transition:all 0.3s ease; 
-    }
-    .nav-links a:hover, .nav-links a.active { 
-      color:#ffcc00; 
-      border-bottom:2px solid #ffcc00; 
-    }
-    .hamburger { display:none; font-size:26px; cursor:pointer; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; background: #0a1f44; padding: 15px 30px; position: sticky; top: 0; z-index: 1000; }
+    .navbar img { height: 55px; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: #ffcc00; border-bottom: 2px solid #ffcc00; }
+    .hamburger { display: none; font-size: 28px; color: #fff; cursor: pointer; }
 
-    @media(max-width:768px){
-      .hamburger { display:block; }
-      .nav-links { 
-        display:none; 
-        flex-direction:column; 
-        width:100%; 
-        background:#0a1f44; 
-      }
-      .nav-links.expanded { display:flex; }
-      .nav-links a { 
-        padding:12px; 
-        border-top:1px solid rgba(255,255,255,0.2); 
-      }
+    /* Mobile Menu */
+    @media (max-width: 900px) {
+      .nav-links { position: absolute; top: 70px; left: 0; width: 100%; background: #0a1f44; flex-direction: column; align-items: center; gap: 15px; padding: 20px 0; display: none; }
+      .nav-links.active { display: flex; }
+      .hamburger { display: block; }
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(rgba(10, 31, 68, 0.75), rgba(10, 31, 68, 0.75)), url('static/images/products-bg.jpg') center/cover no-repeat;
+      height: 60vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .page-header h1 {
+      font-size: 3em;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .page-header p {
+      font-size: 1.2em;
+      color: #f0f0f0;
     }
 
     /* Products Section */
-    .products-section { 
-      max-width:1200px; 
-      margin:60px auto; 
-      padding:20px; 
-      text-align:center; 
-    }
-    .products-section h1 { 
-      color:#0a1f44; 
-      margin-bottom:50px; 
-      font-size:2.4em; 
-    }
-    .product-grid { 
-      display:grid; 
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-      gap:30px; 
-    }
+    .products { padding: 80px 20px; background: #fff; text-align: center; }
+    .products h2 { font-size: 2.5em; color: #0a1f44; margin-bottom: 50px; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 35px; justify-items: center; }
+    .product-card { background: #f7f9fc; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); transition: all 0.3s ease; text-align: center; padding: 25px; width: 100%; max-width: 350px; }
+    .product-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+    .product-card img { width: 100%; height: 220px; object-fit: contain; margin-bottom: 20px; border-radius: 10px; }
+    .product-card h3 { color: #0a1f44; font-size: 1.4em; margin-bottom: 10px; }
+    .product-card p { font-size: 1em; color: #555; }
 
-    .product-card { 
-      background:#fff; 
-      border-radius:15px; 
-      padding:20px; 
-      box-shadow:0 10px 25px rgba(0,0,0,0.1); 
-      transition: all 0.3s ease; 
-    }
-    .product-card:hover { 
-      transform: translateY(-8px); 
-      box-shadow:0 15px 30px rgba(0,0,0,0.15); 
-    }
-    .product-card img { 
-      width:100%; 
-      height:180px; 
-      object-fit:cover; 
-      border-radius:12px; 
-      margin-bottom:15px; 
-    }
-    .product-card h3 { 
-      color:#0a1f44; 
-      margin-bottom:10px; 
-      font-size:1.3em; 
-    }
-    .product-card p { 
-      color:#555; 
-      margin-bottom:15px; 
-      font-size:1em; 
-    }
-    .product-card a.btn { 
-      display:inline-block; 
-      padding:10px 20px; 
-      border-radius:25px; 
-      background:#ffcc00; 
-      color:#0a1f44; 
-      font-weight:bold; 
-      text-decoration:none; 
-      transition: all 0.3s; 
-    }
-    .product-card a.btn:hover { transform: scale(1.05); }
-
-    /* Footer (matched exactly with About page) */
-    footer {
-      background-color:#0a1f44;
-      color:#fff;
-      text-align:center;
-      padding:40px 20px;
-      margin-top:60px;
-    }
-    .footer-grid {
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:space-around;
-      align-items:flex-start;
-      gap:30px;
-      max-width:1200px;
-      margin:auto;
-      text-align:left;
-    }
-    .footer-grid div {
-      flex:1 1 250px;
-    }
-    footer h4 {
-      color:#ffcc00;
-      margin-bottom:10px;
-      font-size:1.2em;
-    }
-    footer p, footer a {
-      color:#ddd;
-      text-decoration:none;
-      font-size:0.95em;
-      display:block;
-      margin:5px 0;
-    }
-    footer a:hover {
-      color:#ffcc00;
-    }
-    footer img {
-      vertical-align:middle;
-      margin:0 5px;
-    }
-    footer > p {
-      margin-top:25px;
-      font-size:0.9em;
-      color:#ccc;
-    }
-    @media(max-width:768px){
-      .footer-grid { text-align:center; }
-    }
+    /* Footer */
+    footer { background: #0a1f44; color: #fff; text-align: center; padding: 40px 10px; margin-top: 50px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; justify-items: center; margin-bottom: 20px; }
+    footer h4 { color: #ffcc00; margin-bottom: 10px; }
+    footer p, footer a { color: #fff; font-size: 0.95em; text-decoration: none; display: block; margin: 5px 0; }
+    footer a:hover { color: #ffcc00; }
+    footer img { margin: 0 5px; border-radius: 50%; }
+    footer p:last-child { font-size: 0.9em; color: #ccc; }
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -186,32 +102,39 @@
     </div>
   </nav>
 
+  <!-- Header -->
+  <section class="page-header" data-aos="fade-up">
+    <div>
+      <h1>Our Products</h1>
+      <p>Innovative IoT and Embedded Solutions Driving the Future</p>
+    </div>
+  </section>
+
   <!-- Products Section -->
-  <section class="products-section">
-    <h1 data-aos="fade-up">Our Products</h1>
+  <section class="products">
+    <h2 data-aos="fade-up">Featured Products</h2>
     <div class="product-grid">
-      <div class="product-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="static/images/chipsetron.jpg" alt="CHIPSETRON">
-        <h3>CHIPSETRON</h3>
-        <p>Advanced IoT Controller</p>
-        <a href="#" class="btn">Learn More</a>
+      <div class="product-card" data-aos="zoom-in">
+        <img src="static/images/chipsetron.jpg" alt="CHIPSETRON: Advanced IoT Controller">
+        <h3>CHIPSETRON: Advanced IoT Controller</h3>
+        <p>Next-generation microcontroller with integrated ADC, DAC, UART, SPI, I2C, and PWM modules for IoT and embedded systems.</p>
       </div>
-      <div class="product-card" data-aos="fade-up" data-aos-delay="200">
-        <img src="static/images/coretrion.jpg" alt="Coretrion">
-        <h3>Coretrion</h3>
-        <p>Advanced IoT Core</p>
-        <a href="#" class="btn">Learn More</a>
+
+      <div class="product-card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="static/images/coretrion.jpg" alt="Coretrion: Advanced IoT Core">
+        <h3>Coretrion: Advanced IoT Core</h3>
+        <p>High-performance processor core with AI, GPU, MMU, and RTOS integration designed for intelligent embedded platforms.</p>
       </div>
-      <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+
+      <div class="product-card" data-aos="zoom-in" data-aos-delay="200">
         <img src="static/images/smartcart.jpg" alt="Smart Cart">
         <h3>Smart Cart</h3>
-        <p>Intelligent IoT-enabled smart cart for automation</p>
-        <a href="#" class="btn">Learn More</a>
+        <p>IoT-enabled shopping cart for real-time product tracking, billing automation, and seamless retail experience.</p>
       </div>
     </div>
   </section>
 
-  <!-- Footer (exactly matched with About page) -->
+  <!-- Footer -->
   <footer>
     <div class="footer-grid">
       <div>
@@ -230,12 +153,8 @@
       </div>
       <div>
         <h4>Follow Us</h4>
-        <a href="https://www.linkedin.com/company/united-integrated-services-pvt-ltd/" target="_blank">
-          <img src="static/images/linkedin.jpg" alt="LinkedIn" width="24">
-        </a>
-        <a href="https://www.instagram.com/uispvtltd/reels/" target="_blank">
-          <img src="static/images/instagram.jpg" alt="Instagram" width="24">
-        </a>
+        <a href="#"><img src="static/images/linkedin.jpg" alt="LinkedIn" width="24"></a>
+        <a href="#"><img src="static/images/instagram.jpg" alt="Instagram" width="24"></a>
       </div>
     </div>
     <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD | All Rights Reserved</p>
@@ -244,11 +163,12 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, once:true });
-    document.getElementById('hamburger').addEventListener('click', function() {
-      document.getElementById('nav-links').classList.toggle('expanded');
+    AOS.init();
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
   </script>
-
 </body>
 </html>
