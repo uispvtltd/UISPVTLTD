@@ -5,25 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Blogs | United Integrated Services Pvt Ltd</title>
 
-<link rel="stylesheet" href="static/style.css" />
+<!-- Favicon -->
+<link rel="icon" href="static/images/logo.jpeg" type="image/jpeg">
+
+<!-- SEO & Meta -->
+<meta name="description" content="United Integrated Services Pvt Ltd - Empowering Innovation in IoT, AI, VLSI, Robotics, Embedded Systems, and Web Technologies.">
+<meta name="keywords" content="IoT, AI, VLSI, Robotics, Embedded Systems, Machine Learning, Web Development, United Integrated Services, Coretrion, Chipsetron, Smart Cart">
+<meta name="author" content="United Integrated Services Pvt Ltd">
+<meta name="robots" content="index, follow">
+
+<!-- Font Awesome & AOS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="static/style.css" />
+
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Poppins', sans-serif; background:#f7f9fc; color:#333; overflow-x:hidden; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family:'Poppins', sans-serif; background:#f7f9fc; color:#333; overflow-x:hidden; }
 
   /* Navbar */
-  .navbar {
-    display:flex; align-items:center; justify-content:space-between;
-    padding:15px 30px; background:#0a1f44; color:#fff; position:sticky; top:0; z-index:1000;
-  }
+  .navbar { display:flex; justify-content:space-between; align-items:center; background:#0a1f44; padding:15px 30px; position:sticky; top:0; z-index:1000; }
   .navbar img { height:55px; }
   .nav-links { display:flex; gap:20px; }
-  .nav-links a { color:#fff; text-decoration:none; font-weight:500; transition:all 0.3s ease; }
+  .nav-links a { color:#fff; text-decoration:none; font-weight:500; transition:0.3s; }
   .nav-links a:hover, .nav-links a.active { color:#ffcc00; border-bottom:2px solid #ffcc00; }
   .hamburger { display:none; font-size:28px; color:#fff; cursor:pointer; }
-
   @media(max-width:900px){
     .nav-links { position:absolute; top:70px; left:0; width:100%; background:#0a1f44; flex-direction:column; align-items:center; gap:15px; padding:20px 0; display:none; }
     .nav-links.active { display:flex; }
@@ -33,21 +45,14 @@
   /* Blogs Section */
   .blogs-section { max-width:1200px; margin:60px auto; padding:20px; }
   .blogs-section h2 { text-align:center; margin-bottom:40px; color:#0a1f44; font-size:2.4em; }
-  .blog-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:25px; }
-
-  .blog-card {
-    background:#fff; border-radius:12px; overflow:hidden; padding:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .blog-card:hover { transform: translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.15); }
+  .blog-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:25px; }
+  .blog-card { background:#fff; border-radius:12px; overflow:hidden; padding:20px; box-shadow:0 10px 25px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+  .blog-card:hover { transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.15); }
   .blog-card img { width:100%; height:auto; border-radius:10px; margin-bottom:15px; }
   .blog-card h3 { color:#0a1f44; margin-bottom:5px; }
   .blog-card .author { font-size:0.9em; color:#555; margin-bottom:10px; }
   .blog-card p { color:#333; margin-bottom:15px; line-height:1.6; }
-  .blog-card button {
-    background:#0a1f44; color:#fff; padding:10px 20px; border:none; border-radius:25px;
-    cursor:pointer; font-weight:bold; transition:all 0.3s ease;
-  }
+  .blog-card button { background:#0a1f44; color:#fff; padding:10px 20px; border:none; border-radius:25px; cursor:pointer; font-weight:bold; transition:all 0.3s ease; }
   .blog-card button:hover { background:#ffcc00; color:#0a1f44; }
 
   /* Modals */
@@ -60,47 +65,29 @@
   .modal-content .author { font-style:italic; color:#555; margin-bottom:15px; }
   .modal-content p { color:#333; margin-bottom:15px; line-height:1.7; }
 
+  /* Clients Section */
+  .clients { padding:70px 20px; text-align:center; background:#fff; }
+  .clients h2 { font-size:2.2em; margin-bottom:40px; color:#0a1f44; }
+  .client-logos img { max-width:180px; margin:15px; transition: transform 0.4s; border-radius:8px; }
+  .client-logos img:hover { transform: scale(1.1); }
+
+  /* Technologies Section */
+  .technologies { padding:80px 20px; background:#f7f9fc; text-align:center; }
+  .technologies h2 { font-size:2.5em; color:#0a1f44; margin-bottom:50px; }
+  .tech-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:30px; }
+  .tech-item { background:#fff; padding:30px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.08); transition:all 0.3s ease; text-align:center; }
+  .tech-item:hover { transform:translateY(-8px); box-shadow:0 12px 24px rgba(0,0,0,0.15); }
+  .tech-item i { font-size:40px; color:#0a1f44; margin-bottom:15px; }
+  .tech-item span { font-weight:600; font-size:1.1em; }
+
   /* Footer */
-  footer {
-    background: #0a1f44;
-    color: #fff;
-    padding: 50px 20px 20px;
-    text-align: center;
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto 30px;
-    text-align: left;
-  }
-
-  footer h4 {
-    color: #ffcc00;
-    margin-bottom: 15px;
-    font-size: 1.2em;
-  }
-
-  footer a {
-    color: #ffcc00;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 8px;
-    transition: color 0.3s;
-  }
-
-  footer a:hover { color: #fff; }
-
-  footer img { margin-right: 10px; vertical-align: middle; }
-
-  footer p:last-child {
-    border-top: 1px solid rgba(255,255,255,0.2);
-    padding-top: 15px;
-    font-size: 0.9em;
-    margin-top: 20px;
-  }
+  footer { background:#0a1f44; color:#fff; text-align:center; padding:50px 20px 20px; }
+  .footer-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:30px; max-width:1200px; margin:0 auto 30px; text-align:left; }
+  footer h4 { color:#ffcc00; margin-bottom:15px; font-size:1.2em; }
+  footer a { color:#ffcc00; text-decoration:none; display:block; margin-bottom:8px; transition:0.3s; }
+  footer a:hover { color:#fff; }
+  footer img { margin-right:10px; vertical-align:middle; }
+  footer p:last-child { border-top:1px solid rgba(255,255,255,0.2); padding-top:15px; font-size:0.9em; margin-top:20px; }
 
 </style>
 </head>
@@ -111,10 +98,10 @@
   <img src="static/images/logo.jpeg" alt="Logo">
   <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
   <div class="nav-links" id="nav-links">
-    <a href="index.html" class="active">Home</a>
+    <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="products.html">Products</a>
-    <a href="blogs.html">Blogs</a>
+    <a href="blogs.html" class="active">Blogs</a>
     <a href="careers.html">Careers</a>
     <a href="contact.html">Contact</a>
   </div>
@@ -161,6 +148,29 @@
       <button onclick="openModal('modal4')">Read More →</button>
     </div>
 
+  </div>
+</section>
+
+<!-- Clients Section -->
+<section class="clients">
+  <h2>Our Esteemed Clients</h2>
+  <div class="client-logos">
+    <img src="static/images/myiotsemi.png" alt="My IoT Semiconductors">
+  </div>
+</section>
+
+<!-- Technologies Section -->
+<section class="technologies" id="technologies">
+  <h2>Technologies We Work On</h2>
+  <div class="tech-grid">
+    <div class="tech-item"><i class="fa-solid fa-wifi"></i><span>Internet of Things (IoT)</span></div>
+    <div class="tech-item"><i class="fa-solid fa-brain"></i><span>Artificial Intelligence & Machine Learning</span></div>
+    <div class="tech-item"><i class="fa-solid fa-microchip"></i><span>VLSI & Chip Design</span></div>
+    <div class="tech-item"><i class="fa-solid fa-robot"></i><span>Robotics & Automation</span></div>
+    <div class="tech-item"><i class="fa-solid fa-microprocessor"></i><span>Embedded Systems</span></div>
+    <div class="tech-item"><i class="fa-solid fa-network-wired"></i><span>Networking & Communication</span></div>
+    <div class="tech-item"><i class="fa-solid fa-code"></i><span>Web & Software Development</span></div>
+    <div class="tech-item"><i class="fa-solid fa-solar-panel"></i><span>Smart Energy & Sustainability</span></div>
   </div>
 </section>
 
@@ -232,22 +242,24 @@
   <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD | All Rights Reserved</p>
 </footer>
 
+<!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ duration:1000, once:true });
 
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
-  hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
 
   function openModal(id) { document.getElementById(id).style.display = 'block'; }
   function closeModal(id) { document.getElementById(id).style.display = 'none'; }
 
-  window.onclick = function(event) {
+  window.onclick = function(event){
     document.querySelectorAll('.modal').forEach(modal => {
       if(event.target == modal) modal.style.display = 'none';
     });
   }
 </script>
+
 </body>
 </html>
