@@ -5,64 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us – United Integrated Services Pvt Ltd</title>
 
-  <!-- SEO -->
+  <!-- Favicon -->
+  <link rel="icon" href="static/images/logo.jpeg" type="image/jpeg">
+
+  <!-- SEO Meta -->
   <meta name="description" content="United Integrated Services Pvt Ltd — A leader in AI, IoT, Embedded Systems, VLSI, Robotics, Machine Learning, and Full Stack Development. Transforming industries through smart innovation.">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="static/style.css" />
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- AOS Animation -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="static/style.css" />
+
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; background: #f7f9fc; }
-    
-    /* Navbar */
-    .navbar {
-      width: 100%; background: #0a1f44; display: flex; align-items: center; justify-content: space-between;
-      padding: 10px 50px; position: sticky; top: 0; z-index: 1000;
-    }
-    .logo img { height: 55px; }
-    .nav-links { display: flex; align-items: center; gap: 30px; }
-    .nav-links a { color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
-    .nav-links a:hover, .nav-links a.active { color: #ffcc00; }
-    .login-btn { background: #ffcc00; color: #0a1f44; padding: 8px 16px; border-radius: 20px; font-weight: bold; }
-    .login-btn:hover { background: #ffd633; }
-    .hamburger { display: none; color: #fff; font-size: 28px; cursor: pointer; }
-    @media (max-width: 768px) {
-      .nav-links { display: none; flex-direction: column; background: #0a1f44; width: 100%; position: absolute; top: 70px; left: 0; padding: 20px 0; }
-      .nav-links.expanded { display: flex; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: #f7f9fc; color: #333; }
+
+    /* Navbar (same as index.html) */
+    .navbar { display: flex; justify-content: space-between; align-items: center; background: #0a1f44; padding: 15px 30px; position: sticky; top: 0; z-index: 1000; }
+    .navbar img { height: 55px; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: #ffcc00; border-bottom: 2px solid #ffcc00; }
+    .hamburger { display: none; font-size: 28px; color: #fff; cursor: pointer; }
+
+    @media (max-width: 900px) {
+      .nav-links { position: absolute; top: 70px; left: 0; width: 100%; background: #0a1f44; flex-direction: column; align-items: center; gap: 15px; padding: 20px 0; display: none; }
+      .nav-links.active { display: flex; }
       .hamburger { display: block; }
     }
 
     /* About Section */
-    .about-section { padding: 60px 20px; text-align: center; }
-    .about-section h1 { margin-bottom: 20px; color: #0a1f44; }
-    .about-section p { max-width: 800px; margin: 0 auto 40px; font-size: 1.1em; }
+    .about-section { padding: 80px 20px; text-align: center; }
+    .about-section h1 { color: #0a1f44; font-size: 2.5em; margin-bottom: 20px; }
+    .about-section p { max-width: 800px; margin: 0 auto 40px; font-size: 1.1em; color: #555; }
 
     .about-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px; margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
     }
-    .about-grid div { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .about-grid div { background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
     .about-grid div:hover { transform: translateY(-5px); }
-    .about-grid h3 { margin-bottom: 10px; font-size: 1.2em; color: #0a1f44; }
+    .about-grid h3 { color: #0a1f44; margin-bottom: 10px; }
+    .about-grid p { font-size: 0.95em; }
 
-    .about-cta { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
-    .btn-primary, .btn-outline { padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; text-decoration: none; }
-    .btn-primary { background: #0a1f44; color: #fff; transition: 0.3s; }
+    .about-cta { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 60px; }
+    .btn-primary, .btn-outline { padding: 12px 25px; font-size: 1em; border-radius: 6px; cursor: pointer; text-decoration: none; }
+    .btn-primary { background: #0a1f44; color: #fff; }
+    .btn-outline { background: transparent; border: 2px solid #0a1f44; color: #0a1f44; }
     .btn-primary:hover { background: #122b63; }
-    .btn-outline { background: transparent; border: 2px solid #0a1f44; color: #0a1f44; transition: 0.3s; }
     .btn-outline:hover { background: #0a1f44; color: #fff; }
 
     /* Team Section */
     .team-section { padding: 70px 20px; background: #fff; text-align: center; }
-    .team-section h2 { font-size: 2.2em; margin-bottom: 50px; color: #0a1f44; }
+    .team-section h2 { color: #0a1f44; font-size: 2em; margin-bottom: 50px; }
     .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; justify-items: center; }
     .team-member { background: #f7f9fc; padding: 25px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: transform 0.3s; }
     .team-member:hover { transform: translateY(-10px); }
     .team-member img { width: 120px; border-radius: 50%; margin-bottom: 15px; }
-    .team-member h3 { color: #0a1f44; margin-bottom: 10px; }
-    .team-member p { font-size: 0.95em; color: #333; }
+    .team-member h3 { color: #0a1f44; margin-bottom: 8px; }
+    .team-member p { font-size: 0.95em; color: #555; }
 
     /* Footer */
     footer { background: #0a1f44; color: #fff; padding: 30px 20px; text-align: center; }
@@ -84,13 +95,11 @@
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">
-      <img src="static/images/logo.jpeg" alt="United Integrated Services Pvt Ltd Logo">
-    </div>
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <img src="static/images/logo.jpeg" alt="Logo">
+    <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
     <div class="nav-links" id="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
       <a href="products.html">Products</a>
       <a href="blogs.html">Blogs</a>
       <a href="careers.html">Careers</a>
@@ -102,22 +111,20 @@
   <section class="about-section" data-aos="fade-up">
     <h1>About Us</h1>
     <p>
-      <strong>United Integrated Services Pvt Ltd</strong> is a future-forward innovation company providing smart, scalable, and secure solutions in AI, IoT, Embedded Systems, VLSI, Robotics, Machine Learning, Full Stack Web Development, and UI/UX Design. We empower industries through intelligent automation and next-generation technology.
+      <strong>United Integrated Services Pvt Ltd</strong> is a future-forward innovation company providing smart, scalable, and secure solutions in AI, IoT, Embedded Systems, VLSI, Robotics, Machine Learning, Full Stack Web Development, and UI/UX Design.
+      We empower industries through intelligent automation and next-generation technology.
     </p>
 
     <div class="about-grid">
       <div>
-        <img src="static/images/vision.png" alt="Vision Icon" width="50">
         <h3>🔭 Vision</h3>
         <p>To transform industries with innovative, intelligent, and sustainable technology solutions.</p>
       </div>
       <div>
-        <img src="static/images/mission.png" alt="Mission Icon" width="50">
         <h3>🎯 Mission</h3>
         <p>To lead the future of automation and smart integration with AI- and IoT-powered systems that enhance efficiency and real-world impact.</p>
       </div>
       <div>
-        <img src="static/images/team.png" alt="Team Icon" width="50">
         <h3>🧠 Our Team</h3>
         <p>A dynamic group of engineers, developers, and creators committed to solving real-world problems through next-gen technology and creative engineering.</p>
       </div>
@@ -136,12 +143,12 @@
       <div class="team-member">
         <img src="static/images/placeholder_ceo.jpg" alt="CEO YVD Kausthubh">
         <h3>YVD Kausthubh</h3>
-        <p>Chief Executive Officer (CEO) – Leading the R&D and product innovation in IoT, AI, and Embedded Systems.</p>
+        <p>Chief Executive Officer (CEO) – Leading R&D and innovation in IoT, AI, and Embedded Systems.</p>
       </div>
       <div class="team-member">
         <img src="static/images/placeholder_coo.png" alt="COO E. Moulika">
         <h3>E. Moulika</h3>
-        <p>Chief Operating Officer (COO) – Overseeing operations, client success, and strategic partnerships.</p>
+        <p>Chief Operating Officer (COO) – Managing operations, client success, and global collaborations.</p>
       </div>
     </div>
   </section>
@@ -165,8 +172,8 @@
       </div>
       <div>
         <h4>Follow Us</h4>
-        <a href="#"><img src="static/images/linkedin.jpg" alt="LinkedIn logo" width="24"></a>
-        <a href="#"><img src="static/images/instagram.jpg" alt="Instagram logo" width="24"></a>
+        <a href="#"><img src="static/images/linkedin.jpg" alt="LinkedIn" width="24"></a>
+        <a href="#"><img src="static/images/instagram.jpg" alt="Instagram" width="24"></a>
       </div>
     </div>
     <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD | All Rights Reserved</p>
@@ -175,11 +182,13 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('expanded');
-    }
-    AOS.init({ duration: 1000, once: true });
+    AOS.init();
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
   </script>
-
 </body>
 </html>
