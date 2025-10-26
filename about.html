@@ -13,7 +13,7 @@
   <meta name="keywords" content="United Integrated Services Pvt Ltd, IoT, AI, VLSI, Robotics, Embedded Systems, Machine Learning, Full Stack Development, Hyderabad, Technology Company">
   <meta name="author" content="United Integrated Services Pvt Ltd">
 
-  <!-- Open Graph / Social -->
+  <!-- Open Graph -->
   <meta property="og:title" content="About – United Integrated Services Pvt Ltd">
   <meta property="og:description" content="Learn about United Integrated Services Pvt Ltd – leaders in AI, IoT, Embedded Systems, VLSI, and Robotics.">
   <meta property="og:image" content="static/images/logo.png">
@@ -23,7 +23,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- AOS Animation -->
+  <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
   <!-- Google Fonts -->
@@ -33,28 +33,101 @@
   <link rel="stylesheet" href="static/style.css" />
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; background: #f7f9fc; color: #333; }
-
-    /* Navbar */
-    .navbar { display: flex; justify-content: space-between; align-items: center; background: rgba(10, 31, 68, 0.9); backdrop-filter: blur(8px); padding: 15px 30px; position: sticky; top: 0; z-index: 1000; transition: 0.3s; }
-    .navbar img { height: 55px; }
-    .nav-links { display: flex; gap: 20px; }
-    .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
-    .nav-links a:hover, .nav-links a.active { color: #ffcc00; border-bottom: 2px solid #ffcc00; }
-    .hamburger { display: none; font-size: 28px; color: #fff; cursor: pointer; }
-
-    @media (max-width: 900px) {
-      .nav-links { position: absolute; top: 70px; left: 0; width: 100%; background: #0a1f44; flex-direction: column; align-items: center; gap: 15px; padding: 20px 0; display: none; }
-      .nav-links.active { display: flex; }
-      .hamburger { display: block; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f7f9fc;
+      color: #333;
+      margin: 0;
+      padding: 0;
     }
 
-    /* About Section */
-    .about-section { padding: 80px 20px; text-align: center; }
-    .about-section h1 { color: #0a1f44; font-size: 2.5em; margin-bottom: 20px; }
-    .about-section p { max-width: 850px; margin: 0 auto 40px; font-size: 1.1em; color: #555; }
+    /* --- NAVBAR (EXACT SAME AS HOME PAGE) --- */
+    .navbar {
+      width: 100%;
+      padding: 18px 80px;
+      background-color: rgba(10, 31, 68, 0.95);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar img {
+      height: 58px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ffcc00;
+      border-bottom: 2px solid #ffcc00;
+      padding-bottom: 3px;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 15px 25px;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #0a1f44;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+        gap: 20px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
+
+    /* --- ABOUT SECTION --- */
+    .about-section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .about-section h1 {
+      color: #0a1f44;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      max-width: 850px;
+      margin: 0 auto 40px;
+      font-size: 1.1em;
+      color: #555;
+    }
 
     .about-grid {
       display: grid;
@@ -62,35 +135,100 @@
       gap: 30px;
       margin-bottom: 60px;
     }
-    .about-grid div { background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
-    .about-grid div:hover { transform: translateY(-5px); }
-    .about-grid h3 { color: #0a1f44; margin-bottom: 10px; }
-    .about-grid p { font-size: 0.95em; }
 
-    .about-cta { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 60px; }
-    .btn-primary, .btn-outline { padding: 12px 25px; font-size: 1em; border-radius: 6px; cursor: pointer; text-decoration: none; }
-    .btn-primary { background: #0a1f44; color: #fff; }
-    .btn-outline { background: transparent; border: 2px solid #0a1f44; color: #0a1f44; }
-    .btn-primary:hover { background: #122b63; }
-    .btn-outline:hover { background: #0a1f44; color: #fff; }
+    .about-grid div {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
 
-    /* Timeline */
-    .timeline { padding: 70px 20px; background: #f7f9fc; text-align: center; }
-    .timeline h2 { color: #0a1f44; font-size: 2em; margin-bottom: 40px; }
-    .timeline p { font-size: 1em; margin: 10px 0; color: #444; }
+    .about-grid div:hover {
+      transform: translateY(-5px);
+    }
 
-    /* Team Section */
-    .team-section { padding: 70px 20px; background: #fff; text-align: center; }
-    .team-section h2 { color: #0a1f44; font-size: 2em; margin-bottom: 50px; }
-    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; justify-items: center; }
-    .team-member { background: #f7f9fc; padding: 25px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; }
-    .team-member:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
-    .team-member img { width: 120px; border-radius: 50%; margin-bottom: 15px; }
-    .team-member h3 { color: #0a1f44; margin-bottom: 8px; }
-    .team-member p { font-size: 0.95em; color: #555; }
+    .about-grid h3 {
+      color: #0a1f44;
+      margin-bottom: 10px;
+    }
 
-    /* Footer */
-    footer { background: #0a1f44; color: #fff; padding: 30px 20px; text-align: center; }
+    /* --- JOURNEY --- */
+    .timeline {
+      padding: 70px 20px;
+      background: #f7f9fc;
+      text-align: center;
+    }
+
+    .timeline h2 {
+      color: #0a1f44;
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
+
+    .timeline p {
+      font-size: 1em;
+      margin: 10px 0;
+      color: #444;
+    }
+
+    /* --- TEAM --- */
+    .team-section {
+      padding: 70px 20px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .team-section h2 {
+      color: #0a1f44;
+      font-size: 2em;
+      margin-bottom: 50px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      justify-items: center;
+    }
+
+    .team-member {
+      background: #f7f9fc;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .team-member img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .team-member h3 {
+      color: #0a1f44;
+      margin-bottom: 8px;
+    }
+
+    .team-member p {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background: #0a1f44;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -98,17 +236,32 @@
       margin-bottom: 20px;
       text-align: left;
     }
-    .footer-grid h4 { margin-bottom: 10px; }
-    .footer-grid a { color: #fff; display: block; margin-bottom: 6px; text-decoration: none; }
-    .footer-grid a:hover { color: #ffcc00; }
-    .socials a { margin: 0 10px; color: #fff; font-size: 20px; }
 
-    .back-to-top { color: #ffcc00; text-decoration: none; display: block; margin-top: 10px; }
+    .footer-grid h4 {
+      margin-bottom: 10px;
+    }
+
+    .footer-grid a {
+      color: #fff;
+      display: block;
+      margin-bottom: 6px;
+      text-decoration: none;
+    }
+
+    .footer-grid a:hover {
+      color: #ffcc00;
+    }
+
+    .back-to-top {
+      color: #ffcc00;
+      text-decoration: none;
+      display: block;
+      margin-top: 10px;
+    }
   </style>
 </head>
 
 <body>
-
   <!-- Navbar -->
   <nav class="navbar">
     <img src="static/images/logo.png" alt="Logo">
@@ -145,22 +298,17 @@
         <p>A dynamic group of engineers, developers, and creators committed to solving real-world problems through next-gen technology and creative engineering.</p>
       </div>
     </div>
-
-    <div class="about-cta">
-      <a href="contact.html" class="btn-primary">Contact Us</a>
-      <a href="products.html" class="btn-outline">View Our Products</a>
-    </div>
   </section>
 
-  <!-- Timeline Section -->
+  <!-- Timeline -->
   <section class="timeline" data-aos="fade-up">
     <h2>Our Journey</h2>
     <p><strong>2023:</strong> Founded with a vision to integrate technology and innovation.</p>
-    <p><strong>2024:</strong> Expanded into IoT, AI, and VLSI domains with multiple client collaborations.</p>
-    <p><strong>2025:</strong> Developing advanced AI-driven solutions and custom embedded systems for industrial and academic applications.</p>
+    <p><strong>2024:</strong> Expanded into IoT, AI, and VLSI domains with internal R&D milestones.</p>
+    <p><strong>2025:</strong> Advancing AI-driven and embedded system innovations for modern industries.</p>
   </section>
 
-  <!-- Team Section -->
+  <!-- Team -->
   <section class="team-section" data-aos="fade-up">
     <h2>Our Leadership Team</h2>
     <div class="team-grid">
@@ -172,7 +320,7 @@
       <div class="team-member">
         <img src="static/images/placeholder_coo.jpg" alt="COO E. Moulika">
         <h3>E. Moulika</h3>
-        <p>Chief Operating Officer (COO) – Managing operations, client success, and global collaborations.</p>
+        <p>Chief Operating Officer (COO) – Managing operations, growth, and strategic initiatives.</p>
       </div>
     </div>
   </section>
@@ -210,7 +358,6 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
-    // Hamburger menu toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
     hamburger.addEventListener('click', () => {
