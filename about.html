@@ -10,6 +10,15 @@
 
   <!-- SEO Meta -->
   <meta name="description" content="United Integrated Services Pvt Ltd — A leader in AI, IoT, Embedded Systems, VLSI, Robotics, Machine Learning, and Full Stack Development. Transforming industries through smart innovation.">
+  <meta name="keywords" content="United Integrated Services Pvt Ltd, IoT, AI, VLSI, Robotics, Embedded Systems, Machine Learning, Full Stack Development, Hyderabad, Technology Company">
+  <meta name="author" content="United Integrated Services Pvt Ltd">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="About – United Integrated Services Pvt Ltd">
+  <meta property="og:description" content="Learn about United Integrated Services Pvt Ltd – leaders in AI, IoT, Embedded Systems, VLSI, and Robotics.">
+  <meta property="og:image" content="static/images/logo.png">
+  <meta property="og:url" content="https://uispvtltd.github.io/United-Integrated-Services-Pvt-Ltd/about.html">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -28,8 +37,8 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Poppins', sans-serif; background: #f7f9fc; color: #333; }
 
-    /* Navbar (same as index.html) */
-    .navbar { display: flex; justify-content: space-between; align-items: center; background: #0a1f44; padding: 15px 30px; position: sticky; top: 0; z-index: 1000; }
+    /* Navbar */
+    .navbar { display: flex; justify-content: space-between; align-items: center; background: rgba(10, 31, 68, 0.9); backdrop-filter: blur(8px); padding: 15px 30px; position: sticky; top: 0; z-index: 1000; transition: 0.3s; }
     .navbar img { height: 55px; }
     .nav-links { display: flex; gap: 20px; }
     .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
@@ -45,7 +54,7 @@
     /* About Section */
     .about-section { padding: 80px 20px; text-align: center; }
     .about-section h1 { color: #0a1f44; font-size: 2.5em; margin-bottom: 20px; }
-    .about-section p { max-width: 800px; margin: 0 auto 40px; font-size: 1.1em; color: #555; }
+    .about-section p { max-width: 850px; margin: 0 auto 40px; font-size: 1.1em; color: #555; }
 
     .about-grid {
       display: grid;
@@ -65,12 +74,17 @@
     .btn-primary:hover { background: #122b63; }
     .btn-outline:hover { background: #0a1f44; color: #fff; }
 
+    /* Timeline */
+    .timeline { padding: 70px 20px; background: #f7f9fc; text-align: center; }
+    .timeline h2 { color: #0a1f44; font-size: 2em; margin-bottom: 40px; }
+    .timeline p { font-size: 1em; margin: 10px 0; color: #444; }
+
     /* Team Section */
     .team-section { padding: 70px 20px; background: #fff; text-align: center; }
     .team-section h2 { color: #0a1f44; font-size: 2em; margin-bottom: 50px; }
     .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; justify-items: center; }
-    .team-member { background: #f7f9fc; padding: 25px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: transform 0.3s; }
-    .team-member:hover { transform: translateY(-10px); }
+    .team-member { background: #f7f9fc; padding: 25px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; }
+    .team-member:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
     .team-member img { width: 120px; border-radius: 50%; margin-bottom: 15px; }
     .team-member h3 { color: #0a1f44; margin-bottom: 8px; }
     .team-member p { font-size: 0.95em; color: #555; }
@@ -88,6 +102,8 @@
     .footer-grid a { color: #fff; display: block; margin-bottom: 6px; text-decoration: none; }
     .footer-grid a:hover { color: #ffcc00; }
     .socials a { margin: 0 10px; color: #fff; font-size: 20px; }
+
+    .back-to-top { color: #ffcc00; text-decoration: none; display: block; margin-top: 10px; }
   </style>
 </head>
 
@@ -136,6 +152,14 @@
     </div>
   </section>
 
+  <!-- Timeline Section -->
+  <section class="timeline" data-aos="fade-up">
+    <h2>Our Journey</h2>
+    <p><strong>2023:</strong> Founded with a vision to integrate technology and innovation.</p>
+    <p><strong>2024:</strong> Expanded into IoT, AI, and VLSI domains with multiple client collaborations.</p>
+    <p><strong>2025:</strong> Developing advanced AI-driven solutions and custom embedded systems for industrial and academic applications.</p>
+  </section>
+
   <!-- Team Section -->
   <section class="team-section" data-aos="fade-up">
     <h2>Our Leadership Team</h2>
@@ -169,6 +193,8 @@
         <a href="careers.html">Careers</a>
         <a href="blogs.html">Blogs</a>
         <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </div>
       <div>
         <h4>Follow Us</h4>
@@ -177,6 +203,7 @@
       </div>
     </div>
     <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD | All Rights Reserved</p>
+    <a href="#" class="back-to-top">↑ Back to Top</a>
   </footer>
 
   <!-- Scripts -->
