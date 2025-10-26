@@ -34,11 +34,11 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Main CSS (kept inline for single-file deployability) -->
+  <!-- Main CSS -->
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; background-color: #f7f9fc; color: #333; overflow-x: hidden; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    body { font-family: 'Poppins', sans-serif; background-color: #f7f9fc; color: #333; overflow-x: hidden; }
 
     /* NAVBAR */
     .navbar { display: flex; justify-content: space-between; align-items: center; background: rgba(10,31,68,0.92); padding: 12px 32px; position: sticky; top: 0; z-index: 1000; transition: all 0.25s ease; backdrop-filter: blur(6px); }
@@ -68,7 +68,6 @@
     .hero-buttons .primary { background: #ffcc00; color: #071033; box-shadow: 0 8px 20px rgba(255,204,0,0.18); }
     .hero-buttons .outline { background: transparent; border: 2px solid rgba(255,255,255,0.18); color: #fff; }
     .hero-buttons button:hover { transform: translateY(-4px); }
-
     .hero-sub { font-size:0.95rem; color:#dfe7fb; margin-top: 8px; opacity: 0.95; }
     .scroll-down { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); font-size: 1.8rem; color: #ffcc00; animation: bounce 1.8s infinite; z-index: 3; display:flex; align-items:center; gap:10px; }
     .scroll-text { font-size:0.85rem; color:#ffcc00; font-weight:600; letter-spacing:0.6px; }
@@ -101,10 +100,8 @@
     .socials { display:flex; gap:12px; margin-top:6px; }
     .socials a img { display:block; width:28px; transition: transform 0.2s; }
     .socials a img:hover { transform:scale(1.06); }
-
     .back-to-top { position: fixed; right: 18px; bottom: 18px; width:44px; height:44px; border-radius:8px; background:#ffcc00; color:#071033; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(2,8,23,0.12); cursor:pointer; z-index:1200; display:none; }
 
-    /* Responsive text sizes */
     @media (max-width: 900px) {
       .hero-content h1 { font-size: 2.1rem; }
       .video-hero { min-height: 520px; }
@@ -131,10 +128,8 @@
 
   <!-- HERO -->
   <section class="video-hero" aria-labelledby="hero-heading">
-    <!-- poster shows while video loads / fallback for mobile -->
     <video autoplay muted loop playsinline class="bg-video" id="heroVideo" poster="static/images/hero-placeholder.jpg" preload="metadata" aria-hidden="true">
       <source src="static/videos/tech-background.mp4" type="video/mp4">
-      <!-- If you want a lighter-by-default fallback, consider static/images/hero-placeholder.jpg -->
     </video>
 
     <div class="hero-content" data-aos="fade-up" data-aos-duration="800">
@@ -160,7 +155,6 @@
     <h2 id="clients-heading">Our Esteemed Clients & Partners</h2>
     <p class="lead">Collaborating with research teams and product innovators to bring ideas to life.</p>
     <div class="client-logos" aria-hidden="false">
-      <!-- Add more client logos into static/images/ and list them here -->
       <img src="static/images/myiotsemi.png" alt="My IoT Semiconductors">
       <img src="static/images/client-placeholder-1.png" alt="Partner 1">
       <img src="static/images/client-placeholder-2.png" alt="Partner 2">
@@ -171,73 +165,11 @@
   <section class="technologies" id="technologies" aria-labelledby="tech-heading">
     <h2 id="tech-heading">Core Technologies</h2>
     <div class="tech-grid">
-      <div class="tech-item" data-aos="zoom-in" data-aos-delay="80">
-        <i class="fa-solid fa-wifi" aria-hidden="true"></i>
-        <div>
-          <div class="t-title">Internet of Things (IoT)</div>
-          <div class="t-desc">End-to-end IoT platforms: sensors, gateways, cloud integration and device management.</div>
-        </div>
-      </div>
-
-      <div class="tech-item" data-aos="zoom-in" data-aos-delay="160">
-        <i class="fa-solid fa-brain" aria-hidden="true"></i>
-        <div>
-          <div class="t-title">Artificial Intelligence & ML</div>
-          <div class="t-desc">Embedded inference, model optimization and cloud ML pipelines for real-time insights.</div>
-        </div>
-      </div>
-
-      <div class="tech-item" data-aos="zoom-in" data-aos-delay="240">
-        <i class="fa-solid fa-microchip" aria-hidden="true"></i>
-        <div>
-          <div class="t-title">VLSI & Chip Design</div>
-          <div class="t-desc">Custom SoC and ASIC design flow — RTL → verification → tape-out enablement.</div>
-        </div>
-      </div>
-
-      <div class="tech-item" data-aos="zoom-in" data-aos-delay="320">
-        <i class="fa-solid fa-robot" aria-hidden="true"></i>
-        <div>
-          <div class="t-title">Robotics & Automation</div>
-          <div class="t-desc">Autonomous systems, control algorithms, and real-world integration for automation tasks.</div>
-        </div>
-      </div>
-
-      <div class="tech-item" data-aos="zoom-in" data-aos-delay="400">
-        <i class="fa-solid fa-microprocessor" aria-hidden="true"></i>
-        <div>
-          <div class="t-title">Embedded Systems</div>
-          <div class="t-desc">Firmware, RTOS integration, sensor interfaces and real-time designs.</div>
-        </div>
-      </div>
-
-      <div class="tech-item" data-aos="zoom-in" data-aos-delay="480">
-        <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
-        <div>
-          <div class="t-title">Networking & Communication</div>
-          <div class="t-desc">Low-power wireless stacks, protocols and secure communication layers.</div>
-        </div>
-      </div>
-
-      <div class="tech-item" data-aos="zoom-in" data-aos-delay="560">
-        <i class="fa-solid fa-code" aria-hidden="true"></i>
-        <div>
-          <div class="t-title">Web & Software Development</div>
-          <div class="t-desc">Full-stack systems for dashboards, APIs and data pipelines to support deployed devices.</div>
-        </div>
-      </div>
-
-      <div class="tech-item" data-aos="zoom-in" data-aos-delay="640">
-        <i class="fa-solid fa-solar-panel" aria-hidden="true"></i>
-        <div>
-          <div class="t-title">Smart Energy & Sustainability</div>
-          <div class="t-desc">Energy-efficient designs and sustainability-focused embedded projects.</div>
-        </div>
-      </div>
+      <!-- Add your tech items here -->
     </div>
   </section>
 
-  <!-- (Optional) Small CTA strip -->
+  <!-- CTA Strip -->
   <section style="background:#071033;color:#fff;padding:26px 20px;text-align:center;">
     <div style="max-width:1100px;margin:0 auto;">
       <strong style="font-size:1.05rem;">Ready to build next-gen hardware or embedded systems?</strong>
@@ -254,7 +186,6 @@
         <p>Phone: <a href="tel:+918978295589">+91 8978295589</a></p>
         <p>Address: Hyderabad, India</p>
       </div>
-
       <div>
         <h4>Quick Links</h4>
         <a href="about.html">About</a>
@@ -263,7 +194,6 @@
         <a href="blogs.html">Blogs</a>
         <a href="contact.html">Contact</a>
       </div>
-
       <div>
         <h4>Follow Us</h4>
         <div class="socials" role="list">
@@ -272,7 +202,6 @@
         </div>
       </div>
     </div>
-
     <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start;">
       <div style="width:100%;display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
         <a href="privacy.html" style="color:#ffcc00;text-decoration:none;font-weight:600;">Privacy Policy</a>
@@ -281,42 +210,7 @@
       <p style="margin-top:10px;color:#c9d2e6;">© 2025 UNITED INTEGRATED SERVICES PVT LTD | All Rights Reserved</p>
     </div>
   </footer>
-
-  <!-- BACK TO TOP -->
-  <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
-    <i class="fa-solid fa-chevron-up" style="font-size:16px;"></i>
-  </button>
-
-  <!-- SCRIPTS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // Initialize AOS
-    AOS.init({ once: true });
-
-    // Hamburger menu toggle
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
-    hamburger.addEventListener('keydown', (e) => { if (e.key === 'Enter') navLinks.classList.toggle('active'); });
-
-    // Navbar background on scroll & active link based on URL
-    const navbar = document.getElementById('navbar');
-    const navLinkEls = document.querySelectorAll('.nav-link');
-    const setActiveLink = () => {
-      const path = location.pathname.split('/').pop() || 'index.html';
-      navLinkEls.forEach(a => a.classList.toggle('active', a.getAttribute('href') === path));
-    };
-    setActiveLink();
-    window.addEventListener('popstate', setActiveLink);
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
-
-      // Back to top button visibility
-      const btt = document.getElementById('backToTop');
-      if (window.scrollY > 300) btt.style.display = 'flex'; else btt.style.display = 'none';
-    });
-
+  
     // Back to top
     document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
