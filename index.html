@@ -67,11 +67,40 @@
     .scroll-down { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-size: 2em; color: #ffcc00; animation: bounce 1.8s infinite; z-index: 3; }
     @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); } 40% { transform: translate(-50%, -10px); } 60% { transform: translate(-50%, -5px); } }
 
-    /* Clients Section */
+    /* Scrolling Clients Section */
     .clients { padding: 70px 20px; text-align: center; background: #fff; }
     .clients h2 { font-size: 2.2em; margin-bottom: 40px; color: #0a1f44; }
-    .client-logos img { max-width: 180px; margin: 15px; transition: transform 0.4s; border-radius: 8px; }
-    .client-logos img:hover { transform: scale(1.1); }
+
+    .client-slider {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      background: #fff;
+      padding: 30px 0;
+    }
+
+    .slide-track {
+      display: flex;
+      width: calc(250px * 12); /* Adjust as needed */
+      animation: scroll 25s linear infinite;
+    }
+
+    .slide-track img {
+      width: 180px;
+      height: auto;
+      margin: 0 30px;
+      border-radius: 8px;
+      transition: transform 0.4s ease;
+    }
+
+    .slide-track img:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
     /* Testimonials Section */
     .testimonials { background: #ffffff; padding: 80px 20px; text-align: center; }
@@ -140,12 +169,18 @@
     <a href="#technologies" class="scroll-down"><i class="fa-solid fa-angles-down"></i></a>
   </section>
 
-  <!-- Clients Section -->
+  <!-- Clients Section (Scrolling Logos) -->
   <section class="clients">
     <h2>Our Esteemed Clients</h2>
-    <div class="client-logos">
-      <img src="static/images/myiotsemi.png" alt="My IoT Semiconductors">
-      <img src="static/images/provlogic.png" alt="Pro V Logic VLSI Institute">
+    <div class="client-slider">
+      <div class="slide-track">
+        <img src="static/images/myiotsemi.png" alt="My IoT Semiconductors">
+        <img src="static/images/provlogic.png" alt="Pro V Logic VLSI Institute">
+        <img src="static/images/myiotsemi.png" alt="My IoT Semiconductors">
+        <img src="static/images/provlogic.png" alt="Pro V Logic VLSI Institute">
+        <img src="static/images/myiotsemi.png" alt="My IoT Semiconductors">
+        <img src="static/images/provlogic.png" alt="Pro V Logic VLSI Institute">
+      </div>
     </div>
   </section>
 
