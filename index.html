@@ -16,7 +16,7 @@
   <meta name="description"
     content="United Integrated Services Pvt Ltd - Empowering Innovation in IoT, AI, VLSI, Robotics, Embedded Systems, and Web Technologies.">
   <meta name="keywords"
-    content="IoT, AI, VLSI, Robotics, Embedded Systems, Machine Learning, Web Development, United Integrated Services, Coretrion, Chipsetron, Smart Cart, Pro V Logic">
+    content="IoT, AI, VLSI, Robotics, Embedded Systems, Machine Learning, Web Development, United Integrated Services, Coretrion, Chipsetron, Smart Cart, Pro V Logic, SV Digital Marketing">
   <meta name="author" content="United Integrated Services Pvt Ltd">
   <meta name="robots" content="index, follow">
 
@@ -27,9 +27,7 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="static/style.css" />
@@ -70,37 +68,18 @@
     /* Scrolling Clients Section */
     .clients { padding: 70px 20px; text-align: center; background: #fff; }
     .clients h2 { font-size: 2.2em; margin-bottom: 40px; color: #0a1f44; }
+    .client-slider { overflow: hidden; position: relative; width: 100%; background: #fff; padding: 30px 0; }
+    .slide-track { display: flex; width: calc(250px * 12); animation: scroll 25s linear infinite; }
+    .slide-track img { width: 180px; height: auto; margin: 0 30px; border-radius: 8px; transition: transform 0.4s ease; }
+    .slide-track img:hover { transform: scale(1.1); }
+    @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    .client-slider {
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-      background: #fff;
-      padding: 30px 0;
-    }
-
-    .slide-track {
-      display: flex;
-      width: calc(250px * 12); /* Adjust as needed */
-      animation: scroll 25s linear infinite;
-    }
-
-    .slide-track img {
-      width: 180px;
-      height: auto;
-      margin: 0 30px;
-      border-radius: 8px;
-      transition: transform 0.4s ease;
-    }
-
-    .slide-track img:hover {
-      transform: scale(1.1);
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+    /* Partners Section */
+    .partners { padding: 60px 20px; background: #f7f9fc; text-align: center; }
+    .partners h2 { font-size: 2.3em; color: #0a1f44; margin-bottom: 20px; }
+    .partners p { max-width: 700px; margin: 0 auto; color: #333; font-size: 1.1em; }
+    .partners img { width: 180px; margin-top: 25px; border-radius: 8px; transition: transform 0.3s ease; }
+    .partners img:hover { transform: scale(1.05); }
 
     /* Testimonials Section */
     .testimonials { background: #ffffff; padding: 80px 20px; text-align: center; }
@@ -169,15 +148,24 @@
     <a href="#technologies" class="scroll-down"><i class="fa-solid fa-angles-down"></i></a>
   </section>
 
-  <!-- Clients Section (Scrolling Logos) -->
+  <!-- Clients Section -->
   <section class="clients">
-    <h2>Our Esteemed Clients</h2>
+    <h2>Our Esteemed Clients & Creative Partners</h2>
     <div class="client-slider">
       <div class="slide-track">
         <img src="static/images/myiotsemi.png" alt="My IoT Semiconductors">
         <img src="static/images/provlogic.png" alt="Pro V Logic VLSI Institute">
+        <img src="static/images/svdigital.png" alt="SV Digital Marketing - Media & Creative Partner">
       </div>
     </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section class="partners">
+    <h2>Our Creative Collaboration</h2>
+    <p>Proud to partner with <strong>SV Digital Marketing</strong> — our official <em>Media & Creative Partner</em>,
+      specializing in professional video editing, digital promotions, and creative branding for United Integrated Services Pvt Ltd.</p>
+    <img src="static/images/svdigital.png" alt="SV Digital Marketing Logo">
   </section>
 
   <!-- Client Testimonial -->
@@ -218,17 +206,6 @@
       <div class="tech-item"><i class="fa-solid fa-code"></i><span>Web & Software Development</span></div>
       <div class="tech-item"><i class="fa-solid fa-solar-panel"></i><span>Smart Energy & Sustainability</span></div>
     </div>
-
-    <!-- Services Section -->
-    <section class="technologies" id="services">
-      <h2>Our Services</h2>
-      <div class="tech-grid">
-        <div class="tech-item">
-          <i class="fa-solid fa-industry"></i>
-          <span>Coal Mines</span>
-        </div>
-      </div>
-    </section>
   </section>
 
   <!-- Footer -->
@@ -249,6 +226,10 @@
         <a href="contact.html">Contact</a>
       </div>
       <div>
+        <h4>Our Partners</h4>
+        <p>Media & Creative Partner: <strong>SV Digital Marketing</strong></p>
+      </div>
+      <div>
         <h4>Follow Us</h4>
         <div class="socials">
           <a href="https://www.linkedin.com/company/united-integrated-services-pvt-ltd/" target="_blank">
@@ -267,6 +248,9 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+
+    // Hamburger Menu Toggle
+    const hamburger = document.getElementBy
 
     // Hamburger Menu Toggle
     const hamburger = document.getElementById('hamburger');
