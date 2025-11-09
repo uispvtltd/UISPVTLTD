@@ -38,15 +38,35 @@
     body { font-family: 'Poppins', sans-serif; background-color: #f7f9fc; color: #333; overflow-x: hidden; }
 
     /* Navbar */
-    .navbar { display: flex; justify-content: space-between; align-items: center; background: #0a1f44; padding: 15px 30px; position: sticky; top: 0; z-index: 1000; }
-    .navbar img { height: 55px; }
+    .navbar { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      background: transparent; /* Removed background color */
+      padding: 15px 30px; 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000;
+    }
+    .navbar img { height: 75px; /* Increased logo visibility */ }
     .nav-links { display: flex; gap: 20px; }
     .nav-links a { color: white; text-decoration: none; font-weight: 500; transition: 0.3s; }
     .nav-links a:hover, .nav-links a.active { color: #ffcc00; border-bottom: 2px solid #ffcc00; }
     .hamburger { display: none; font-size: 28px; color: #fff; cursor: pointer; }
 
     @media (max-width: 900px) {
-      .nav-links { position: absolute; top: 70px; left: 0; width: 100%; background: #0a1f44; flex-direction: column; align-items: center; gap: 15px; padding: 20px 0; display: none; }
+      .nav-links { 
+        position: absolute; 
+        top: 70px; 
+        left: 0; 
+        width: 100%; 
+        background: #0a1f44; 
+        flex-direction: column; 
+        align-items: center; 
+        gap: 15px; 
+        padding: 20px 0; 
+        display: none; 
+      }
       .nav-links.active { display: flex; }
       .hamburger { display: block; }
     }
@@ -64,46 +84,6 @@
     .hero-buttons button:hover { transform: scale(1.05); }
     .scroll-down { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); font-size: 2em; color: #ffcc00; animation: bounce 1.8s infinite; z-index: 3; }
     @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); } 40% { transform: translate(-50%, -10px); } 60% { transform: translate(-50%, -5px); } }
-
-    /* Clients Section */
-    .clients { padding: 70px 20px; text-align: center; background: #fff; }
-    .clients h2 { font-size: 2.2em; margin-bottom: 40px; color: #0a1f44; }
-    .client-slider { overflow: hidden; position: relative; width: 100%; background: #fff; padding: 30px 0; }
-    .slide-track { display: flex; width: calc(250px * 12); animation: scroll 25s linear infinite; }
-    .slide-track img { width: 180px; height: auto; margin: 0 30px; border-radius: 8px; transition: transform 0.4s ease; }
-    .slide-track img:hover { transform: scale(1.1); }
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* Partners Section */
-    .partners { padding: 60px 20px; background: #f7f9fc; text-align: center; }
-    .partners h2 { font-size: 2.3em; color: #0a1f44; margin-bottom: 20px; }
-    .partners p { max-width: 700px; margin: 0 auto; color: #333; font-size: 1.1em; }
-    .partners img { width: 180px; margin-top: 25px; border-radius: 8px; transition: transform 0.3s ease; }
-    .partners img:hover { transform: scale(1.05); }
-
-    /* Testimonials Section */
-    .testimonials { background: #ffffff; padding: 80px 20px; text-align: center; }
-    .testimonials h2 { font-size: 2rem; color: #0a1f44; margin-bottom: 50px; font-weight: 700; }
-    .testimonial-container { display: flex; justify-content: center; }
-    .testimonial-card { background: #f2f6fc; border-radius: 20px; padding: 40px 30px; max-width: 700px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); text-align: left; transition: transform 0.3s ease; }
-    .testimonial-card:hover { transform: translateY(-5px); }
-    .testimonial-text { font-size: 1rem; color: #333; margin-bottom: 25px; line-height: 1.6; font-style: italic; }
-    .testimonial-author { display: flex; align-items: center; gap: 15px; }
-    .testimonial-author img { width: 60px; height: 60px; border-radius: 50%; object-fit: contain; }
-    .testimonial-author h4 { margin: 0; font-size: 1.1rem; color: #0a1f44; }
-    .testimonial-author span { font-size: 0.9rem; color: #555; }
-
-    /* Technologies Section */
-    .technologies { padding: 80px 20px; background: #f7f9fc; text-align: center; }
-    .technologies h2 { font-size: 2.5em; color: #0a1f44; margin-bottom: 50px; }
-    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
-    .tech-item { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); transition: all 0.3s ease; text-align: center; }
-    .tech-item:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
-    .tech-item i { font-size: 40px; color: #0a1f44; margin-bottom: 15px; }
-    .tech-item span { font-weight: 600; font-size: 1.1em; }
 
     /* Footer */
     footer { background: #0a1f44; color: #fff; text-align: center; padding: 40px 20px 20px 20px; font-family: 'Poppins', sans-serif; }
@@ -151,79 +131,15 @@
     <a href="#technologies" class="scroll-down"><i class="fa-solid fa-angles-down"></i></a>
   </section>
 
-  <!-- Clients Section -->
-  <section class="clients">
-    <h2>Our Esteemed Clients & Creative Partners</h2>
-    <div class="client-slider">
-      <div class="slide-track">
-        <img src="static/images/myiotsemi.png" alt="My IoT Semiconductors">
-        <img src="static/images/provlogic.png" alt="Pro V Logic VLSI Institute">
-        <img src="static/images/svdigital.jpg" alt="SV Digital Marketing">
-        <img src="static/images/voguestar.jpg" alt="The Vogue Star">
-
-        <!-- Duplicate for seamless infinite scroll -->
-        <img src="static/images/myiotsemi.png" alt="My IoT Semiconductors">
-        <img src="static/images/provlogic.png" alt="Pro V Logic VLSI Institute">
-        <img src="static/images/svdigital.jpg" alt="SV Digital Marketing">
-        <img src="static/images/voguestar.jpg" alt="The Vogue Star">
-      </div>
-    </div>
-  </section>
-
-  <!-- Partners Section -->
-  <section class="partners">
-    <h2>Our Creative Collaboration</h2>
-    <p>Proud to partner with <strong>SV Digital Marketing</strong> — our official <em>Media & Creative Partner</em>,
-      specializing in professional video editing, digital promotions, and creative branding for United Integrated Services Pvt Ltd.</p>
-    <img src="static/images/svdigital.jpg" alt="SV Digital Marketing Logo">
-  </section>
-
-  <!-- Client Testimonial -->
-  <section class="testimonials" id="testimonials">
-    <h2 data-aos="fade-up">What Our Clients Say</h2>
-    <div class="testimonial-container" data-aos="fade-up" data-aos-delay="200">
-      <div class="testimonial-card">
-        <p class="testimonial-text">
-          "United Integrated Services Pvt Ltd is setting new benchmarks in technological innovation,
-          blending creativity and engineering excellence. With a strong focus on IoT, AI, Robotics,
-          and Embedded Technologies, the company is leading the way in designing next-generation smart
-          solutions that redefine automation and connectivity.<br><br>
-          Their commitment to research-driven innovation and cutting-edge product development continues
-          to empower industries and shape a smarter, more efficient future. Truly, a company that stands
-          as a symbol of innovation, precision, and technological progress."
-        </p>
-        <div class="testimonial-author">
-          <img src="static/images/provlogic.png" alt="ProV Logic Logo">
-          <div>
-            <h4>Ms. Prasanthi Chanda</h4>
-            <span>Founder & CEO, Pro V Logic VLSI Institute</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Technologies Section -->
-  <section class="technologies" id="technologies">
-    <h2>Technologies</h2>
-    <div class="tech-grid">
-      <div class="tech-item"><i class="fa-solid fa-wifi"></i><span>Internet of Things (IoT)</span></div>
-      <div class="tech-item"><i class="fa-solid fa-brain"></i><span>Artificial Intelligence & Machine Learning</span></div>
-      <div class="tech-item"><i class="fa-solid fa-microchip"></i><span>VLSI & Chip Design</span></div>
-      <div class="tech-item"><i class="fa-solid fa-robot"></i><span>Robotics & Automation</span></div>
-      <div class="tech-item"><i class="fa-solid fa-microprocessor"></i><span>Embedded Systems</span></div>
-      <div class="tech-item"><i class="fa-solid fa-network-wired"></i><span>Networking & Communication</span></div>
-      <div class="tech-item"><i class="fa-solid fa-code"></i><span>Web & Software Development</span></div>
-      <div class="tech-item"><i class="fa-solid fa-solar-panel"></i><span>Smart Energy & Sustainability</span></div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer>
     <div class="footer-grid">
       <div>
         <h4>Contact Us</h4>
-        <p>Email: <a href="mailto:uiservices@gmail.com">uispvtltd2025@gmail.com</a></p>
+        <p>Email: 
+          <a href="mailto:uispvtltd2025@gmail.com">uispvtltd2025@gmail.com</a><br>
+          <a href="mailto:uiservices.info@gmail.com">uiservices.info@gmail.com</a>
+        </p>
         <p>Phone: <a href="tel:+918978295589">+91 8978295589</a></p>
         <p>Address: Hyderabad, India</p>
       </div>
@@ -251,7 +167,7 @@
         </div>
       </div>
     </div>
-    <p>© 2025 UNITED INTEGRATED SERVICES
+    <p>© 2025 UNITED INTEGRATED SERVICES</p>
   </footer>
 
   <!-- Scripts -->
