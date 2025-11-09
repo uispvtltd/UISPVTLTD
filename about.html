@@ -30,37 +30,40 @@
 
     /* Navbar (Matched to Home Page) */
     .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #0a1f44;
-      padding: 15px 30px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .navbar img { height: 55px; }
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      transition: all 0.3s ease;
-    }
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-    .nav-links a:hover, .nav-links a.active {
-      color: #ffcc00;
-      border-bottom: 2px solid #ffcc00;
-    }
-    .hamburger {
-      display: none;
-      font-size: 28px;
-      color: #fff;
-      cursor: pointer;
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;  /* ✅ No background */
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar img {
+  height: 55px;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffcc00;
+  border-bottom: 2px solid #ffcc00;
+}
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
     @media (max-width: 900px) {
       .nav-links {
         position: absolute;
