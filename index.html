@@ -15,21 +15,20 @@
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- AOS (optional animations) -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
       background: #f7f9fc;
       color: #333;
       overflow-x: hidden;
     }
-    html { scroll-behavior: smooth; }
 
-    /* ============================================================
-       ⭐ ALWAYS WHITE NAVBAR (Clean Corporate)
-    ============================================================ */
+    /* ================= NAVBAR (Always White) ================= */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -39,42 +38,35 @@
       position: fixed;
       top: 0;
       z-index: 1000;
-      background: #ffffff;       /* ALWAYS WHITE */
-      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      background: #ffffff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     }
-
     .navbar img {
       height: 55px;
     }
-
     .nav-links {
       display: flex;
       gap: 20px;
     }
-
     .nav-links a {
-      color: #0a1f44;            /* DARK BLUE TEXT */
+      color: #0a1f44;
       font-weight: 500;
       text-decoration: none;
       transition: 0.3s;
     }
-
     .nav-links a:hover,
     .nav-links a.active {
       color: #003366;
       border-bottom: 2px solid #003366;
     }
-
     .hamburger {
       display: none;
       font-size: 28px;
-      color: #0a1f44;            /* VISIBLE DARK ICON */
+      color: #0a1f44;
       cursor: pointer;
     }
-
     @media (max-width: 900px) {
       .hamburger { display: block; }
-
       .nav-links {
         position: absolute;
         top: 80px;
@@ -82,25 +74,20 @@
         width: 100%;
         flex-direction: column;
         align-items: center;
-        background: #ffffff;     /* WHITE MOBILE MENU */
+        background: #ffffff;
         padding: 20px 0;
         gap: 15px;
         display: none;
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       }
-
-      .nav-links a {
-        color: #0a1f44;          /* DARK TEXT ALWAYS */
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
+      .nav-links.active { display: flex; }
+      .nav-links a { color: #0a1f44; }
     }
 
-    /* ============================================================
-       HERO SECTION
-    ============================================================ */
+    /* Add space below fixed navbar */
+    .page-offset { height: 80px; }
+
+    /* ================= HERO SECTION ================= */
     .video-hero {
       position: relative;
       height: 100vh;
@@ -111,7 +98,6 @@
       color: #ffffff;
       overflow: hidden;
     }
-
     .bg-video {
       position: absolute;
       width: 100%;
@@ -119,7 +105,6 @@
       object-fit: cover;
       z-index: 0;
     }
-
     .video-hero::before {
       content: "";
       position: absolute;
@@ -128,23 +113,21 @@
       background: rgba(0,0,0,0.35);
       z-index: 1;
     }
-
     .hero-content {
       position: relative;
       z-index: 2;
+      max-width: 850px;
+      padding: 0 20px;
     }
-
     .hero-content h1 {
       font-size: 2.8em;
       font-weight: 700;
+      margin-bottom: 10px;
     }
-
     .hero-content p {
       font-size: 1.2em;
-      margin-top: 10px;
       margin-bottom: 25px;
     }
-
     .hero-buttons button {
       padding: 12px 28px;
       border-radius: 6px;
@@ -152,146 +135,299 @@
       margin: 0 10px;
       cursor: pointer;
       font-size: 1em;
-      transition: .3s;
+      transition: 0.3s;
     }
-
-    .primary {
+    .hero-buttons .primary {
       background: #e6e6e6;
       color: #071A36;
     }
-
-    .outline {
+    .hero-buttons .outline {
       background: transparent;
       border: 2px solid #ffffff;
       color: #ffffff;
     }
 
-    /* ============================================================
-       CLIENTS
-    ============================================================ */
+    /* ================= CLIENTS ================= */
     .clients {
-      padding: 60px 20px;
+      padding: 70px 20px;
       background: #ffffff;
       text-align: center;
     }
-
     .clients h2 {
       font-size: 2.2em;
       color: #071A36;
       margin-bottom: 40px;
     }
-
     .client-slider {
       overflow: hidden;
       white-space: nowrap;
       width: 100%;
     }
-
     .slide-track {
       display: inline-flex;
       animation: scroll 14s linear infinite;
     }
-
     .client-slider img {
       width: 180px;
       margin: 0 25px;
       filter: grayscale(100%);
-      transition: .3s;
+      transition: 0.3s;
     }
-
     .client-slider img:hover {
       filter: grayscale(0%);
       transform: scale(1.05);
     }
-
     @keyframes scroll {
-      0%   { transform: translateX(0); }
+      0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
 
-    /* ============================================================
-       TECHNOLOGIES
-    ============================================================ */
-    .technologies {
+    /* ================= WHO WE ARE (SHORT INTRO) ================= */
+    .info-section {
       padding: 70px 20px;
+      background: #f7f9fc;
       text-align: center;
     }
+    .info-section h2 {
+      font-size: 2.3em;
+      color: #071A36;
+      margin-bottom: 18px;
+    }
+    .info-section p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 1.05em;
+      color: #555;
+      line-height: 1.6em;
+    }
 
+    /* ================= TECHNOLOGIES ================= */
+    .technologies {
+      padding: 70px 20px;
+      background: #ffffff;
+      text-align: center;
+    }
     .technologies h2 {
       color: #071A36;
       font-size: 2.4em;
       margin-bottom: 45px;
     }
-
     .tech-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 25px;
     }
-
     .tech-item {
-      background: #ffffff;
+      background: #f7f9fc;
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.08);
       text-align: center;
-      transition: .3s;
+      transition: 0.3s;
     }
-
-    .tech-item:hover {
-      transform: translateY(-8px);
-    }
-
+    .tech-item:hover { transform: translateY(-6px); }
     .tech-item i {
       font-size: 40px;
       color: #071A36;
       margin-bottom: 10px;
     }
 
-    /* ============================================================
-       MOBILITY ONLY – TIPPER
-    ============================================================ */
+    /* ================= CORE SERVICES (Preview, not Products page) ================= */
+    .services-section {
+      padding: 70px 20px;
+      background: #f7f9fc;
+      text-align: center;
+    }
+    .services-section h2 {
+      color: #071A36;
+      font-size: 2.3em;
+      margin-bottom: 18px;
+    }
+    .services-section p {
+      max-width: 800px;
+      margin: 0 auto 35px;
+      font-size: 1.02em;
+      color: #555;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+    .service-card {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      text-align: left;
+      transition: 0.3s;
+    }
+    .service-card:hover { transform: translateY(-6px); }
+    .service-card i {
+      font-size: 30px;
+      color: #071A36;
+      margin-bottom: 10px;
+    }
+    .service-card h3 {
+      font-size: 1.1em;
+      color: #071A36;
+      margin-bottom: 6px;
+    }
+    .service-card p {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    /* ================= WHY CHOOSE US ================= */
+    .why-section {
+      padding: 70px 20px;
+      background: #ffffff;
+    }
+    .why-section h2 {
+      text-align: center;
+      color: #071A36;
+      font-size: 2.3em;
+      margin-bottom: 35px;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+    .why-card {
+      background: #f7f9fc;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+    .why-card h3 {
+      font-size: 1.05em;
+      color: #071A36;
+      margin-bottom: 8px;
+    }
+    .why-card p {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    /* ================= STATS / HIGHLIGHTS ================= */
+    .stats-section {
+      padding: 60px 20px;
+      background: #0b1630;
+      color: #ffffff;
+      text-align: center;
+    }
+    .stats-section h2 {
+      font-size: 2.2em;
+      margin-bottom: 25px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 25px;
+    }
+    .stat-card {
+      padding: 15px;
+    }
+    .stat-card h3 {
+      font-size: 2em;
+      margin-bottom: 5px;
+    }
+    .stat-card p {
+      font-size: 0.95em;
+      color: #d9e6ff;
+    }
+
+    /* ================= TESTIMONIALS ================= */
+    .testimonials {
+      padding: 70px 20px;
+      background: #ffffff;
+      text-align: center;
+    }
+    .testimonials h2 {
+      color: #071A36;
+      font-size: 2.3em;
+      margin-bottom: 30px;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+    .testimonial-card {
+      background: #f7f9fc;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      font-size: 0.95em;
+      color: #555;
+    }
+    .testimonial-card strong {
+      display: block;
+      margin-top: 10px;
+      color: #071A36;
+    }
+
+    /* ================= MOBILITIES (Tipper only) ================= */
     .mobility-section {
       background: #ffffff;
       text-align: center;
       padding: 70px 20px;
     }
-
     .mobility-section h2 {
       color: #071A36;
       margin-bottom: 30px;
       font-size: 2.2em;
     }
-
     .mobility-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 25px;
     }
-
     .mobility-item {
       background: #f7f9fc;
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
-
     .mobility-item i {
       font-size: 40px;
       color: #071A36;
       margin-bottom: 12px;
     }
 
-    /* ============================================================
-       FOOTER — MATCHING SCREENSHOT
-    ============================================================ */
+    /* ================= CTA BANNER ================= */
+    .cta-section {
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #071A36, #0b2e5e);
+      text-align: center;
+      color: #ffffff;
+    }
+    .cta-section h2 {
+      font-size: 2.1em;
+      margin-bottom: 10px;
+    }
+    .cta-section p {
+      margin-bottom: 20px;
+      font-size: 1em;
+    }
+    .cta-section a {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 6px;
+      background: #ffffff;
+      color: #071A36;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* ================= FOOTER ================= */
     footer {
       background: #071A36;
-      color: white;
+      color: #ffffff;
       padding: 50px 20px;
       text-align: center;
     }
-
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -299,25 +435,21 @@
       margin-bottom: 20px;
       text-align: left;
     }
-
     .footer-grid h4 {
       border-left: 4px solid #9fc5ff;
       padding-left: 10px;
       margin-bottom: 12px;
     }
-
     .footer-grid a {
       color: #d9e6ff;
       text-decoration: none;
       display: block;
       margin-bottom: 8px;
-      transition: .3s;
+      transition: 0.3s;
     }
-
     .footer-grid a:hover {
       color: #ffffff;
     }
-
     .socials img {
       width: 30px;
       margin-right: 10px;
@@ -327,16 +459,10 @@
 
 <body>
 
-  <!-- ============================================================
-       NAVBAR
-  ============================================================ -->
+  <!-- NAVBAR -->
   <nav class="navbar">
-    <img src="static/images/logo.png" alt="Logo">
-
-    <div class="hamburger" id="hamburger">
-      <i class="fas fa-bars"></i>
-    </div>
-
+    <img src="static/images/logo.png" alt="UIS Logo">
+    <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
     <div class="nav-links" id="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
@@ -347,93 +473,194 @@
     </div>
   </nav>
 
-  <!-- JS For hamburger -->
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+  <div class="page-offset"></div>
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
-
-  <!-- ============================================================
-       HERO
-  ============================================================ -->
-  <section class="video-hero">
-    <video autoplay muted loop class="bg-video">
+  <!-- HERO -->
+  <section class="video-hero" data-aos="fade-in">
+    <video autoplay muted loop playsinline class="bg-video">
       <source src="static/videos/tech-background.mp4" type="video/mp4">
     </video>
-
     <div class="hero-content">
-      <h1>Welcome to United Integrated Services Pvt Ltd</h1>
-      <p>Empowering Innovation in IoT, AI, Robotics, Mobilities & Embedded Engineering</p>
-      <a href="products.html"><button class="primary">Explore Products</button></a>
-      <a href="contact.html"><button class="outline">Get in Touch</button></a>
+      <h1>Engineering Intelligent Systems for the Future</h1>
+      <p>UIS builds smart solutions in IoT, AI, Embedded Systems, VLSI, Robotics and Industrial Mobilities.</p>
+      <div class="hero-buttons">
+        <a href="products.html"><button class="primary">Explore Solutions</button></a>
+        <a href="contact.html"><button class="outline">Partner With Us</button></a>
+      </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       CLIENTS
-  ============================================================ -->
-  <section class="clients">
+  <!-- CLIENTS -->
+  <section class="clients" data-aos="fade-up">
     <h2>Our Esteemed Clients & Creative Partners</h2>
     <div class="client-slider">
       <div class="slide-track">
-        <img src="static/images/myiotsemi.png">
-        <img src="static/images/svdigital.jpg">
-        <img src="static/images/myiotsemi.png">
-        <img src="static/images/svdigital.jpg">
+        <img src="static/images/myiotsemi.png" alt="My IoT Semiconductors">
+        <img src="static/images/svdigital.jpg" alt="SV Digital Marketing">
+        <img src="static/images/myiotsemi.png" alt="My IoT Semiconductors">
+        <img src="static/images/svdigital.jpg" alt="SV Digital Marketing">
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       TECHNOLOGIES
-  ============================================================ -->
-  <section class="technologies" id="technologies">
-    <h2>Technologies</h2>
+  <!-- WHO WE ARE (Short intro, About page has full details) -->
+  <section class="info-section" data-aos="fade-up">
+    <h2>Who We Are</h2>
+    <p>
+      United Integrated Services Pvt Ltd (UIS) is a technology-driven engineering company focused on building
+      intelligent hardware and software systems. From AI and IoT-powered solutions to custom chip design and
+      mobility services, we bring together innovation, reliability and real-world impact.
+    </p>
+  </section>
+
+  <!-- TECHNOLOGIES -->
+  <section class="technologies" id="technologies" data-aos="fade-up">
+    <h2>Core Technology Domains</h2>
     <div class="tech-grid">
-      <div class="tech-item"><i class="fa-solid fa-wifi"></i><span>IoT</span></div>
-      <div class="tech-item"><i class="fa-solid fa-brain"></i><span>AI / ML</span></div>
-      <div class="tech-item"><i class="fa-solid fa-microchip"></i><span>VLSI</span></div>
-      <div class="tech-item"><i class="fa-solid fa-robot"></i><span>Robotics</span></div>
+      <div class="tech-item"><i class="fa-solid fa-wifi"></i><span>Internet of Things (IoT)</span></div>
+      <div class="tech-item"><i class="fa-solid fa-brain"></i><span>Artificial Intelligence & Machine Learning</span></div>
+      <div class="tech-item"><i class="fa-solid fa-microchip"></i><span>VLSI & Chip Design</span></div>
+      <div class="tech-item"><i class="fa-solid fa-robot"></i><span>Robotics & Automation</span></div>
       <div class="tech-item"><i class="fa-solid fa-microprocessor"></i><span>Embedded Systems</span></div>
-      <div class="tech-item"><i class="fa-solid fa-network-wired"></i><span>Networking</span></div>
-      <div class="tech-item"><i class="fa-solid fa-code"></i><span>Web Development</span></div>
-      <div class="tech-item"><i class="fa-solid fa-solar-panel"></i><span>Smart Energy</span></div>
+      <div class="tech-item"><i class="fa-solid fa-network-wired"></i><span>Networking & Communication</span></div>
+      <div class="tech-item"><i class="fa-solid fa-code"></i><span>Web & Software Development</span></div>
+      <div class="tech-item"><i class="fa-solid fa-solar-panel"></i><span>Smart Energy & Sustainability</span></div>
     </div>
   </section>
 
-  <!-- ============================================================
-       MOBILITY SERVICES
-  ============================================================ -->
-  <section class="mobility-section">
+  <!-- CORE SERVICES (Preview – not full Products page) -->
+  <section class="services-section" data-aos="fade-up">
+    <h2>What We Deliver</h2>
+    <p>End-to-end engineering services for industries, startups and enterprises looking to build smart, connected and intelligent systems.</p>
+    <div class="service-grid">
+      <div class="service-card">
+        <i class="fa-solid fa-diagram-project"></i>
+        <h3>IoT Solutions & Platforms</h3>
+        <p>Designing sensor networks, edge systems and dashboards for monitoring, control and analytics.</p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-brain"></i>
+        <h3>AI & ML Integration</h3>
+        <p>Custom AI models for prediction, automation, image processing and intelligent decision-making.</p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-microchip"></i>
+        <h3>Embedded & VLSI Engineering</h3>
+        <p>Custom boards, firmware and chip-level designs optimized for performance and power.</p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-robot"></i>
+        <h3>Robotics & Automation</h3>
+        <p>Autonomous and semi-autonomous platforms for industrial and research applications.</p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-truck"></i>
+        <h3>Industrial Mobilities</h3>
+        <p>Technology-backed support for heavy-duty tipper and dumper lorry operations and monitoring.</p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h3>Full Stack Software</h3>
+        <p>Web portals, dashboards and tools connected with hardware systems and cloud infrastructure.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why-section" data-aos="fade-up">
+    <h2>Why Choose UIS</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>Deep Tech Expertise</h3>
+        <p>Strong foundation in VLSI, Embedded, AI, Robotics and IoT with in-house R&D experience.</p>
+      </div>
+      <div class="why-card">
+        <h3>End-to-End Development</h3>
+        <p>We handle everything from concept to prototype to deployment in real industrial environments.</p>
+      </div>
+      <div class="why-card">
+        <h3>Industry-Focused Solutions</h3>
+        <p>Solutions built specifically for manufacturing, mobility, automation and smart infrastructure.</p>
+      </div>
+      <div class="why-card">
+        <h3>Scalable & Secure</h3>
+        <p>Architectures designed for reliability, scalability and long-term maintenance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section" data-aos="fade-up">
+    <h2>Our Growing Impact</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>15+</h3>
+        <p>Technology Domains</p>
+      </div>
+      <div class="stat-card">
+        <h3>25+</h3>
+        <p>Prototypes & Projects</p>
+      </div>
+      <div class="stat-card">
+        <h3>4+</h3>
+        <p>Key Business Verticals</p>
+      </div>
+      <div class="stat-card">
+        <h3>100%</h3>
+        <p>Commitment to Innovation</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" data-aos="fade-up">
+    <h2>What Our Partners Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        “UIS helped us convert our concept into a working prototype with clear documentation and support.”
+        <strong>Technology Partner</strong>
+      </div>
+      <div class="testimonial-card">
+        “Their knowledge in embedded systems and IoT made integration with our existing setup very smooth.”
+        <strong>Industrial Client</strong>
+      </div>
+      <div class="testimonial-card">
+        “Professional, responsive and focused on innovation. Looking forward to future collaborations with UIS.”
+        <strong>Startup Founder</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILITIES -->
+  <section class="mobility-section" data-aos="fade-up">
     <h2>Mobilities Services</h2>
     <div class="mobility-grid">
-
       <div class="mobility-item">
         <i class="fa-solid fa-truck"></i>
-        <span>Heavy-Duty Tipper & Dumper Lorries</span>
-        <p>High-capacity vehicles used for mining, construction and industrial haulage.</p>
+        <span style="display:block; font-weight:600; margin-bottom:6px;">Heavy-Duty Tipper & Dumper Lorries</span>
+        <p style="font-size:0.95em; color:#555;">
+          High-capacity vehicles used for mining, construction and industrial haulage with technology-backed monitoring and planning support.
+        </p>
       </div>
-
     </div>
   </section>
 
-  <!-- ============================================================
-       FOOTER
-  ============================================================ -->
+  <!-- CTA BANNER -->
+  <section class="cta-section" data-aos="fade-up">
+    <h2>Ready to Build Your Next Innovation with UIS?</h2>
+    <p>Share your idea or requirement with us and we will help you turn it into a real, scalable solution.</p>
+    <a href="contact.html">Talk to Our Team</a>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
-
       <div>
         <h4>Contact Us</h4>
         <p>Email: <a href="mailto:uiservices.info@gmail.com">uiservices.info@gmail.com</a></p>
         <p>Phone: <a href="tel:+918978295589">8978295589</a></p>
         <p>Address: Hyderabad, India</p>
       </div>
-
       <div>
         <h4>Quick Links</h4>
         <a href="about.html">About</a>
@@ -442,28 +669,14 @@
         <a href="blogs.html">Blogs</a>
         <a href="contact.html">Contact</a>
       </div>
-
       <div>
         <h4>Our Partners</h4>
         <p>Creative Partner:<br><strong>SV Digital Marketing</strong></p>
       </div>
-
       <div>
         <h4>Follow Us</h4>
         <div class="socials">
           <a href="https://www.linkedin.com/company/united-integrated-services-pvt-ltd/" target="_blank">
-            <img src="static/images/linkedin.png">
+            <img src="static/images/linkedin.png" alt="LinkedIn">
           </a>
-          <a href="https://www.instagram.com/uispvtltd/reels/" target="_blank">
-            <img src="static/images/Instagram.jpeg">
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-    <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD | All Rights Reserved</p>
-  </footer>
-
-</body>
-</html>
+          <a href="https://www.instagr
