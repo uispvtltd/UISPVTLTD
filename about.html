@@ -20,7 +20,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Main CSS -->
+  <!-- External CSS -->
   <link rel="stylesheet" href="static/style.css" />
 
   <style>
@@ -28,49 +28,53 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Poppins', sans-serif; background: #f7f9fc; color: #333; }
 
-    /* Navbar (Matched to Home Page) */
+    /* ✔ Navbar Matched to Home Page */
     .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: transparent;  /* ✅ No background */
-  padding: 15px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-.navbar img {
-  height: 55px;
-}
-.nav-links {
-  display: flex;
-  gap: 20px;
-  transition: all 0.3s ease;
-}
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
-.nav-links a:hover,
-.nav-links a.active {
-  color: #ffcc00;
-  border-bottom: 2px solid #ffcc00;
-}
-.hamburger {
-  display: none;
-  font-size: 28px;
-  color: #fff;
-  cursor: pointer;
-}
-    @media (max-width: 900px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      background: transparent;
+    }
+    .navbar.scrolled {
+      background: #071A36;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .navbar img {
+      height: 60px;
+      filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
+    }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ececec;
+      border-bottom: 2px solid #ececec;
+    }
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    @media(max-width: 900px) {
       .nav-links {
         position: absolute;
-        top: 70px;
+        top: 80px;
         left: 0;
         width: 100%;
-        background: #0a1f44;
+        background: #071A36;
         flex-direction: column;
         align-items: center;
         gap: 15px;
@@ -81,10 +85,18 @@
       .hamburger { display: block; }
     }
 
+    /* Page Spacer */
+    .top-space { padding-top: 120px; }
+
     /* About Section */
     .about-section { padding: 80px 20px; text-align: center; }
     .about-section h1 { color: #0a1f44; font-size: 2.5em; margin-bottom: 20px; }
-    .about-section p { max-width: 800px; margin: 0 auto 40px; font-size: 1.1em; color: #555; }
+    .about-section p {
+      max-width: 850px;
+      margin: 0 auto 40px;
+      font-size: 1.1em;
+      color: #555;
+    }
 
     .about-grid {
       display: grid;
@@ -92,48 +104,81 @@
       gap: 30px;
       margin-bottom: 60px;
     }
-    .about-grid div { background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
-    .about-grid div:hover { transform: translateY(-5px); }
+    .about-grid div {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .about-grid div:hover { transform: translateY(-6px); }
     .about-grid h3 { color: #0a1f44; margin-bottom: 10px; }
     .about-grid p { font-size: 0.95em; }
 
-    .about-cta { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 60px; }
-    .btn-primary, .btn-outline { padding: 12px 25px; font-size: 1em; border-radius: 6px; cursor: pointer; text-decoration: none; }
-    .btn-primary { background: #0a1f44; color: #fff; }
-    .btn-outline { background: transparent; border: 2px solid #0a1f44; color: #0a1f44; }
-    .btn-primary:hover { background: #122b63; }
-    .btn-outline:hover { background: #0a1f44; color: #fff; }
-
     /* Team Section */
     .team-section { padding: 70px 20px; background: #fff; text-align: center; }
-    .team-section h2 { color: #0a1f44; font-size: 2em; margin-bottom: 50px; }
-    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; justify-items: center; }
-    .team-member { background: #f7f9fc; padding: 25px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); transition: transform 0.3s; }
+    .team-section h2 { color: #0a1f44; font-size: 2.3em; margin-bottom: 40px; }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      justify-items: center;
+    }
+    .team-member {
+      background: #f7f9fc;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+      text-align: center;
+    }
     .team-member:hover { transform: translateY(-10px); }
-    .team-member img { width: 120px; border-radius: 50%; margin-bottom: 15px; }
-    .team-member h3 { color: #0a1f44; margin-bottom: 8px; }
-    .team-member p { font-size: 0.95em; color: #555; }
+    .team-member img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 12px;
+    }
 
-    /* Footer */
-    footer { background: #0a1f44; color: #fff; padding: 30px 20px; text-align: center; }
+    /* ✔ Footer Matched to Home Page */
+    footer {
+      background: #071A36;
+      color: #fff;
+      text-align: center;
+      padding: 50px 20px;
+    }
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 30px;
       margin-bottom: 20px;
       text-align: left;
     }
-    .footer-grid h4 { margin-bottom: 10px; }
-    .footer-grid a { color: #fff; display: block; margin-bottom: 6px; text-decoration: none; }
-    .footer-grid a:hover { color: #ffcc00; }
-    .socials a { margin: 0 10px; color: #fff; font-size: 20px; }
+    .footer-grid h4 {
+      margin-bottom: 15px;
+      font-size: 1.1em;
+      border-left: 4px solid #9fc5ff;
+      padding-left: 10px;
+    }
+    .footer-grid a {
+      color: #d9e6ff;
+      display: block;
+      margin-bottom: 8px;
+      text-decoration: none;
+    }
+    .footer-grid a:hover { color: #ffffff; }
+    .socials img { width: 30px; transition: 0.3s; }
+    .socials img:hover { transform: scale(1.1); }
+    footer p { margin-top: 20px; font-size: 0.9em; color: #ccc; }
   </style>
 </head>
+
 <body>
 
-  <!-- ✅ Navbar -->
-  <nav class="navbar">
-    <a href="index.html"><img src="static/images/logo.png" alt="Logo"></a>
+  <!-- ✔ Navbar -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html"><img src="static/images/logo.png" alt="UIS Logo"></a>
     <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
     <div class="nav-links" id="nav-links">
       <a href="index.html">Home</a>
@@ -145,32 +190,29 @@
     </div>
   </nav>
 
+  <div class="top-space"></div>
+
   <!-- About Section -->
   <section class="about-section" data-aos="fade-up">
-    <h1>About Us</h1>
+    <h1>About United Integrated Services Pvt Ltd</h1>
     <p>
-      <strong>United Integrated Services Pvt Ltd</strong> is a future-forward innovation company providing smart, scalable, and secure solutions in AI, IoT, Embedded Systems, VLSI, Robotics, Machine Learning, Full Stack Web Development, and UI/UX Design.
-      We empower industries through intelligent automation and next-generation technology.
+      <strong>United Integrated Services Pvt Ltd (UIS)</strong> is a next-generation innovation company delivering intelligent automation, AI-driven solutions, and embedded technologies for modern industries.  
+      We specialize in AI, IoT, VLSI, Robotics, Machine Learning, Embedded Systems, Mobility Services, and Full Stack Development.
     </p>
 
     <div class="about-grid">
       <div>
         <h3>🔭 Vision</h3>
-        <p>To transform industries with innovative, intelligent, and sustainable technology solutions.</p>
+        <p>To build a technologically advanced future through impactful, innovative, and sustainable solutions.</p>
       </div>
       <div>
         <h3>🎯 Mission</h3>
-        <p>To lead the future of automation and smart integration with AI- and IoT-powered systems that enhance efficiency and real-world impact.</p>
+        <p>To integrate smart systems powered by AI, IoT, and Automation to solve real-world challenges.</p>
       </div>
       <div>
         <h3>🧠 Our Team</h3>
-        <p>A dynamic group of engineers, developers, and creators committed to solving real-world problems through next-gen technology and creative engineering.</p>
+        <p>A strong team of engineers, innovators, and leaders building India's next-gen technological ecosystem.</p>
       </div>
-    </div>
-
-    <div class="about-cta">
-      <a href="contact.html" class="btn-primary">Contact Us</a>
-      <a href="products.html" class="btn-outline">View Our Products</a>
     </div>
   </section>
 
@@ -181,25 +223,26 @@
       <div class="team-member">
         <img src="static/images/placeholder_ceo.jpg" alt="CEO YVD Kausthubh">
         <h3>YVD Kausthubh</h3>
-        <p>Chief Executive Officer (CEO) – Leading R&D and innovation in IoT, AI, and Embedded Systems.</p>
+        <p>Chief Executive Officer (CEO)</p>
       </div>
       <div class="team-member">
         <img src="static/images/placeholder_coo.jpg" alt="COO E. Moulika">
         <h3>E. Moulika</h3>
-        <p>Chief Operating Officer (COO) – Managing operations, client success, and global collaborations.</p>
+        <p>Chief Operating Officer (COO)</p>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ✔ Footer (Same as Home Page) -->
   <footer>
     <div class="footer-grid">
       <div>
         <h4>Contact Us</h4>
-        <p>Email: <a href="mailto:uispvtltd2025@gmail.com">uispvtltd2025@gmail.com</a></p>
-        <p>Phone: <a href="tel:+918978295589">+91 8978295589</a></p>
+        <p>Email: <a href="mailto:uiservices.info@gmail.com">uiservices.info@gmail.com</a></p>
+        <p>Phone: <a href="tel:+918978295589">8978295589</a></p>
         <p>Address: Hyderabad, India</p>
       </div>
+
       <div>
         <h4>Quick Links</h4>
         <a href="about.html">About</a>
@@ -208,10 +251,22 @@
         <a href="blogs.html">Blogs</a>
         <a href="contact.html">Contact</a>
       </div>
+
+      <div>
+        <h4>Our Partners</h4>
+        <p>Media & Creative Partner:<br><strong>SV Digital Marketing</strong></p>
+      </div>
+
       <div>
         <h4>Follow Us</h4>
-        <a href="#"><img src="static/images/linkedin.png" alt="LinkedIn" width="24"></a>
-        <a href="#"><img src="static/images/Instagram.jpeg" alt="Instagram" width="24"></a>
+        <div class="socials">
+          <a href="https://www.linkedin.com/company/united-integrated-services-pvt-ltd/" target="_blank">
+            <img src="static/images/linkedin.png" alt="LinkedIn">
+          </a>
+          <a href="https://www.instagram.com/uispvtltd/reels/" target="_blank">
+            <img src="static/images/Instagram.jpeg" alt="Instagram">
+          </a>
+        </div>
       </div>
     </div>
     <p>© 2025 UNITED INTEGRATED SERVICES PVT LTD | All Rights Reserved</p>
@@ -222,23 +277,22 @@
   <script>
     AOS.init();
 
-    // ✅ Hamburger menu toggle (same as Home)
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
-    const navItems = navLinks.querySelectorAll('a');
+    const navbar = document.getElementById('navbar');
 
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
 
-    // Close on link click (mobile fix)
-    navItems.forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 900) {
-          navLinks.classList.remove('active');
-        }
-      });
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
     });
   </script>
+
 </body>
 </html>
